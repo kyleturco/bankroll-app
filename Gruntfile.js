@@ -116,7 +116,7 @@ module.exports = function(grunt) {
           outputStyle: 'compressed'
         },
         files: {
-          'public/assets/main.css': 'src/_styles/main.scss'
+          'public/assets/main.css': 'src/main.scss'
         }
       },
       dev: {
@@ -125,7 +125,7 @@ module.exports = function(grunt) {
           sourceMapEmbed: true
         },
         files: {
-          'public/assets/main.css': 'src/_styles/main.scss'
+          'public/assets/main.css': 'src/main.scss'
         }
       }
     },

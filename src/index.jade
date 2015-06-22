@@ -21,16 +21,20 @@ html(lang="en-US" ng-app="bankRoll")
               li: a(href="/#/profile") Account
         .header-nav-right
           button(class="btn btn-default navbar-btn") Logout
-      .container.content
+    .content
+      .container
         .app(ng-view)
 
     script(src="lib/build.js")
-    script(src="js/main.js")
 
-    script(src="auth/auth.config.js")
-    script(src="lib/build.js")
     script(src="assets/main.module.js")
     script(src="assets/main.constants.js")
     script(src="assets/main.filters.js")
+
+    script(src="assets/static/static.config.js")
+
+    script(src="assets/auth/auth.config.js")
+    script(src="assets/auth/login.controller.js")
+    script(src="assets/auth/logout.controller.js")
 
 

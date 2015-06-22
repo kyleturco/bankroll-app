@@ -1,6 +1,19 @@
-h1 Financial Summary
-hr
-.add-new-project
-  h2 Add New Project
-  input(type="text" placeholder="Enter project name")
-  button(class="btn btn.primary") Add
+.overview-content
+  h1 Financial Summary
+  .col-md-8.left-side
+    .add-new-project
+      hr
+      h2 Add New Project
+      input(type="text" placeholder="Enter project name")
+      button(class="btn btn-default") Add
+    .project-list
+
+  .col-md-4.right-side
+    .income-total.sidebar-box
+      h2 Income
+      hr
+      p {{income.total}}
+    .expense-total.sidebar-box
+      h2 Expenses
+      hr
+      p {{expense.total}}

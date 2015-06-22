@@ -1,8 +1,25 @@
 
-<h1>Financial Summary</h1>
-<hr/>
-<div class="add-new-project">
-  <h2>Add New Project</h2>
-  <input type="text" placeholder="Enter project name"/>
-  <button class="btn btn.primary">Add</button>
+<div class="overview-content">
+  <h1>Financial Summary</h1>
+  <div class="col-md-8 left-side">
+    <div class="add-new-project">
+      <hr/>
+      <h2>Add New Project</h2>
+      <input type="text" placeholder="Enter project name"/>
+      <button class="btn btn-default">Add</button>
+    </div>
+    <div class="project-list"></div>
+  </div>
+  <div class="col-md-4 right-side">
+    <div class="income-total sidebar-box">
+      <h2>Income</h2>
+      <hr/>
+      <p>{{income.total}}</p>
+    </div>
+    <div class="expense-total sidebar-box">
+      <h2>Expenses</h2>
+      <hr/>
+      <p>{{expense.total}}</p>
+    </div>
+  </div>
 </div>

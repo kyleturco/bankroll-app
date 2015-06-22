@@ -1,0 +1,36 @@
+doctype html
+html(lang="en-US" ng-app="bankRoll")
+  head
+    meta(charset="utf-8")
+    meta(http-equiv="X-UA-Compatible", content="IE=edge")
+    meta(name="viewport", content="width=device-width, initial-scale=1")
+    title Bankroll
+    //- link(rel="stylesheet" href="lib/build.css")
+    link(rel="stylesheet" href="assets/main.css")
+    link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
+    link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
+
+  body
+    .navbar
+      .container
+        .header-nav-left
+          h1.header-logo <i class="fa fa-university"></i> Bankroll
+          .header-links
+            ul(class="list-inline")
+              li: a(href="/#/overview") Overview
+              li: a(href="/#/profile") Account
+        .header-nav-right
+          button(class="btn btn-default navbar-btn") Logout
+      .container.content
+        .app(ng-view)
+
+    script(src="lib/build.js")
+    script(src="js/main.js")
+
+    script(src="auth/auth.config.js")
+    script(src="lib/build.js")
+    script(src="assets/main.module.js")
+    script(src="assets/main.constants.js")
+    script(src="assets/main.filters.js")
+
+

@@ -1,0 +1,23 @@
+{
+  "name": "bankroll-app",
+  "version": "0.0.0",
+  "homepage": "https://github.com/kyleturco/bankroll-app",
+  "authors": [
+    "Kyle Turco <kyleturco@gmail.com>"
+  ],
+  "main": "index.html",
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.1",
+    "bootstrap": "~3.3.5",
+    "angular-route": "~1.4.1",
+    "firebase": "~2.2.7"
+  }
+}

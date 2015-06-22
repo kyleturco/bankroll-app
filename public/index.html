@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en-US" ng-app="bankRoll">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Bankroll</title>
+    <link rel="stylesheet" href="assets/main.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  </head>
+  <body>
+    <div class="navbar">
+      <div class="container">
+        <div class="header-nav-left">
+          <h1 class="header-logo"><i class="fa fa-university"></i> Bankroll</h1>
+          <div class="header-links">
+            <ul class="list-inline">
+              <li><a href="/#/overview">Overview</a></li>
+              <li><a href="/#/profile">Account</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="header-nav-right">
+          <button class="btn btn-default navbar-btn">Logout</button>
+        </div>
+      </div>
+      <div class="container content">
+        <div ng-view class="app"></div>
+      </div>
+    </div>
+    <script src="lib/build.js"></script>
+    <script src="js/main.js"></script>
+    <script src="auth/auth.config.js"></script>
+    <script src="lib/build.js"></script>
+    <script src="assets/main.module.js"></script>
+    <script src="assets/main.constants.js"></script>
+    <script src="assets/main.filters.js"></script>
+  </body>
+</html>

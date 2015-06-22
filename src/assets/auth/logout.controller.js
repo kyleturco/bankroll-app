@@ -1,16 +1,12 @@
 angular
   .module('bankRoll')
 
-    .controller('LogoutCtrl', function ($scope, $location, Auth) {
-    var vm = this;
+  .controller('LogoutCtrl', function ($rootScope, $scope, $location, API_URL) {
+    var fb = new Firebase(API_URL);
 
-    vm.login = function () {
-      Auth.login(vm.email, vm.password, function () {
-        $location.path('/people');
-        $scope.$apply();
-      });
-    };
-
-    vm.register = function () {};
-  })
-
+    fb.unauth(function () {
+      $rootScope.auth = null;
+      $location.path('/login');
+      $scope.$apply();
+    });
+  });

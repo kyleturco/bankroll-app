@@ -10,7 +10,7 @@ angular
         resolve: {
           checkLogin: function ($rootScope, $location) {
             if ($rootScope.auth) {
-              $location.path('/people')
+              $location.path('/overview')
             }
           }
         }
@@ -19,5 +19,5 @@ angular
       .when('/logout', {
         template: '<h1>Logging out...</h1>',
         controller: 'LogoutCtrl'
-      });
-  });
+      })
+    });

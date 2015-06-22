@@ -2,6 +2,9 @@ angular
   .module('bankRoll')
   .config(function ($routeProvider) {
     $routeProvider
+      .when('/', {
+        templateUrl: 'assets/auth/login.html'
+      })
       .when('/overview', {
         templateUrl: 'assets/static/overview.html'
       })

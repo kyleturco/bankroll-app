@@ -1,34 +1,32 @@
 angular
   .module('bankRoll')
 
-  .controller('LoginCtrl', function ($rootScope, $scope, $location, API_URL) {
+  .controller('LoginCtrl', function ($rootScope, $scope, $location, API_URL, $http) {
     var vm = this;
 
-    vm.login = function () {
+    vm.login = function (email, password) {
       var fb = new Firebase(API_URL);
 
       fb.authWithPassword({
-        email: vm.email,
-        password: vm.password
+        email: email,
+        password: password
       }, function (err, authData) {
         if (err) {
           console.log('Error', err)
         } else {
           $rootScope.auth = authData;
-          $location.path('/people');
+          $location.path('/overview');
           $scope.$apply();
         }
       });
-
     };
 
-    vm.register = function () {
+    vm.register = function (email, password) {
       var fb = new Firebase(API_URL);
 
-      alert("is this working?");
       fb.createUser({
-        email: vm.email,
-        password: vm.password
+        email: email, 
+        password: password
       }, function (err, authData) {
         if (err) {
           console.log('Error', err)
@@ -37,5 +35,9 @@ angular
           console.log("User created successfully");
         }
       })
+      $http
+        .put(`${API_URL}/profile/${userID}.json`, personObject)
+        .success(cb)
     };
   });
+

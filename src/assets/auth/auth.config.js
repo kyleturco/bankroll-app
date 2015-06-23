@@ -11,10 +11,12 @@ angular
           checkLogin: function ($rootScope, $location) {
             if ($rootScope.auth) {
               $location.path('/overview')
+            } else {
+              $location.path('/login')
+              }
             }
           }
-        }
-      })
+        })
 
       .when('/logout', {
         template: '<h1>Logging out...</h1>',

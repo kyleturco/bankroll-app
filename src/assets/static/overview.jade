@@ -1,12 +1,39 @@
 .overview-content
-  h1 Financial Summary
   .col-md-8.left-side
-    .add-new-project
-      hr
-      h2 Add New Project
-      input(type="text" placeholder="Enter project name")
-      button(class="btn btn-default") Add
-    .project-list
+    h1 Financial Summary
+    hr
+    .add-new-main
+      .col-md-4.add-new-project
+        h3 Add Income
+        .form-group
+          label.control-label Name
+          input.form-control(type="text")
+        .form-group
+          label.control-label Amount
+          input.form-control(type="text")
+        .form-group
+          label.control-label Date
+          input.form-control(type="date")
+        .form-group
+          label.control-label Notes
+          input.form-control(type="text")
+        button(class="btn btn-default") Add
+      .col-md-4.add-new-expense
+        h3 Add Expense
+        .form-group
+          label.control-label Name
+          input.form-control(type="text")
+        .form-group
+          label.control-label Amount
+          input.form-control(type="text")
+        .form-group
+          label.control-label Date
+          input.form-control(type="date")
+        .form-group
+          label.control-label Notes
+          input.form-control(type="text")
+        button(class="btn btn-default") Add
+
 
   .col-md-4.right-side
     .income-total.sidebar-box

@@ -1,14 +1,14 @@
 
 <h1>Login</h1>
-<form name="loginForm">
+<form name="loginForm" ng-submit="auth.register(auth.secret.email, auth.secret.password)">
   <div class="form-group">
     <label class="control-label">Email</label>
-    <input type="email" ng-model="auth.email" class="form-control"/>
+    <input type="email" ng-model="auth.secret.email" class="form-control"/>
   </div>
   <div class="form-group">
     <label class="control-label">Password</label>
-    <input type="password" ng-model="auth.password" class="form-control"/>
+    <input type="password" ng-model="auth.secret.password" class="form-control"/>
+    <button ng-click="auth.register(auth.secret.email, auth.secret.password)" class="btn btn-default">Register</button>
+    <button ng-click="auth.login(auth.secret.email, auth.secret.password)" class="btn btn-primary">Login</button>
   </div>
-  <button ng-click="auth.register()" class="btn btn-default">Register</button>
-  <button ng-click="auth.login()" class="btn btn-primary">Login</button>
 </form>

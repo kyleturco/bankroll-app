@@ -5,7 +5,7 @@ angular
     var vm = this;
     vm.id = $routeParams.id;
 
-    Person.getOne(vm.id, function (data) {
+    Income.getOne(vm.id, function (data) {
       vm.income = data;
     });
 
@@ -14,5 +14,12 @@ angular
         $location.path('/overview');
       });
     };
+
+    vm.saveIncome = function () {
+      Income.create(vm.id, function () {
+        console.log("is this shit working?");
+      });
+    };
+
     // vm.onModalLoad = function () {};
   });

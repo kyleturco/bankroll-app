@@ -6,12 +6,11 @@ angular
       .when('/overview', {
         templateUrl: 'assets/static/overview.html',
         controller: 'IncomeController',
-        controllerAs: 'main',
-        private: true
+        controllerAs: 'income'
       })
-      // .when('/people/new', {
-      //   templateUrl: 'assets/people/people.html',
-      //   controller: 'NewPersonCtrl',
+      // .when('/overview', {
+      //   templateUrl: 'assets/static/overview.html',
+      //   controller: 'NewIncomeCtrl',
       //   controllerAs: 'main',
       //   private: true
       // })

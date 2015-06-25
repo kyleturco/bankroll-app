@@ -1,25 +1,25 @@
-angular
-  .module('bankRoll')
+// angular
+//   .module('bankRoll')
 
-  .controller('NewPersonCtrl', function ($location, $scope, Person) {
-    var vm = this;
+//   .controller('NewIncomeCtrl', function ($location, $scope, Person) {
+//     var vm = this;
 
-    vm.onModalLoad = function () {
-      $('#modal').modal('show');
+//     // vm.onModalLoad = function () {
+//     //   $('#modal').modal('show');
 
-      $('#modal').on('hidden.bs.modal', function (e) {
-        $location.path('/people');
-        $scope.$apply();
-      });
-    };
+//     //   $('#modal').on('hidden.bs.modal', function (e) {
+//     //     $location.path('/people');
+//     //     $scope.$apply();
+//     //   });
+//     // };
 
-    vm.saveAddress = function () {
-      Person.create(vm.person, function () {
-        $('#modal').modal('hide');
-      });
-    };
+//     vm.saveIncome = function () {
+//       Income.create(vm.income, function () {
+//         console.log("is this shit working?");
+//       });
+//     };
 
-    Person.getAll(function (people) {
-      vm.people = people;
-    });
-  });
+//     Person.getAll(function (people) {
+//       vm.people = people;
+//     });
+//   });

@@ -6,7 +6,7 @@ angular
       .when('/overview', {
         templateUrl: 'assets/static/overview.html',
         controller: 'IncomeController',
-        controllerAs: 'income'
+        controllerAs: 'main'
       })
       // .when('/overview', {
       //   templateUrl: 'assets/static/overview.html',

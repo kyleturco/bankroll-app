@@ -1,6 +1,10 @@
 
-<h1>Login</h1>
-<form name="loginForm">
+<h1>Register for Bankroll</h1>
+<form name="registerForm">
+  <div class="form-group">
+    <label class="control-label">Name</label>
+    <input type="text" ng-model="auth.name" class="form-control"/>
+  </div>
   <div class="form-group">
     <label class="control-label">Email</label>
     <input type="email" ng-model="auth.email" class="form-control"/>
@@ -8,6 +12,6 @@
   <div class="form-group">
     <label class="control-label">Password</label>
     <input type="password" ng-model="auth.password" class="form-control"/>
-    <button ng-click="auth.login(auth.email, auth.password)" class="btn btn-primary">Login</button><a href="/#/register">Register</a>
+    <button ng-click="auth.register(auth.email, auth.password)" class="btn btn-default">Register</button>
   </div>
 </form>

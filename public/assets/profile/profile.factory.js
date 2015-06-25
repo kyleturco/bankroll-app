@@ -1,19 +1,28 @@
-'use strict';
+"use strict";
 
-angular.module('bankRoll').factory('Profile', function ($http, API_URL) {
-  return {
+// angular
+//   .module('bankRoll')
 
-    create: function create(data, userID, cb) {
-      $http.put('' + API_URL + '/profile/' + userID + '.json', data).success(cb);
-    },
+//   .factory('Profile', function ($http, API_URL) {
+//     return {
 
-    update: function update(id, data, cb) {
-      $http.put('' + API_URL + '/profile/' + id + '.json', data).success(cb);
-    },
+//       create(data, userID, cb) {
+//         $http
+//           .put(`${API_URL}/profile/${userID}.json`, data)
+//           .success(cb);
+//       },
 
-    destroy: function destroy(id, cb) {
-      $http['delete']('' + API_URL + '/profile/' + id + '.json').success(cb);
-    }
-  };
-});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hc3NldHMvcHJvZmlsZS9wcm9maWxlLmZhY3RvcnkuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxPQUFPLENBQ0osTUFBTSxDQUFDLFVBQVUsQ0FBQyxDQUVsQixPQUFPLENBQUMsU0FBUyxFQUFFLFVBQVUsS0FBSyxFQUFFLE9BQU8sRUFBRTtBQUM1QyxTQUFPOztBQUVMLFVBQU0sRUFBQSxnQkFBQyxJQUFJLEVBQUUsTUFBTSxFQUFFLEVBQUUsRUFBRTtBQUN2QixXQUFLLENBQ0YsR0FBRyxNQUFJLE9BQU8saUJBQVksTUFBTSxZQUFTLElBQUksQ0FBQyxDQUM5QyxPQUFPLENBQUMsRUFBRSxDQUFDLENBQUM7S0FDaEI7O0FBRUQsVUFBTSxFQUFBLGdCQUFDLEVBQUUsRUFBRSxJQUFJLEVBQUUsRUFBRSxFQUFFO0FBQ25CLFdBQUssQ0FDRixHQUFHLE1BQUksT0FBTyxpQkFBWSxFQUFFLFlBQVMsSUFBSSxDQUFDLENBQzFDLE9BQU8sQ0FBQyxFQUFFLENBQUMsQ0FBQztLQUNoQjs7QUFFRCxXQUFPLEVBQUEsaUJBQUMsRUFBRSxFQUFFLEVBQUUsRUFBRTtBQUNkLFdBQUssVUFDSSxNQUFJLE9BQU8saUJBQVksRUFBRSxXQUFRLENBQ3ZDLE9BQU8sQ0FBQyxFQUFFLENBQUMsQ0FBQztLQUNoQjtHQUNGLENBQUE7Q0FDRixDQUFDLENBQUMiLCJmaWxlIjoic3JjL2Fzc2V0cy9wcm9maWxlL3Byb2ZpbGUuZmFjdG9yeS5qcyIsInNvdXJjZXNDb250ZW50IjpbImFuZ3VsYXJcbiAgLm1vZHVsZSgnYmFua1JvbGwnKVxuXG4gIC5mYWN0b3J5KCdQcm9maWxlJywgZnVuY3Rpb24gKCRodHRwLCBBUElfVVJMKSB7XG4gICAgcmV0dXJuIHtcblxuICAgICAgY3JlYXRlKGRhdGEsIHVzZXJJRCwgY2IpIHtcbiAgICAgICAgJGh0dHBcbiAgICAgICAgICAucHV0KGAke0FQSV9VUkx9L3Byb2ZpbGUvJHt1c2VySUR9Lmpzb25gLCBkYXRhKVxuICAgICAgICAgIC5zdWNjZXNzKGNiKTtcbiAgICAgIH0sXG5cbiAgICAgIHVwZGF0ZShpZCwgZGF0YSwgY2IpIHtcbiAgICAgICAgJGh0dHBcbiAgICAgICAgICAucHV0KGAke0FQSV9VUkx9L3Byb2ZpbGUvJHtpZH0uanNvbmAsIGRhdGEpXG4gICAgICAgICAgLnN1Y2Nlc3MoY2IpO1xuICAgICAgfSxcblxuICAgICAgZGVzdHJveShpZCwgY2IpIHtcbiAgICAgICAgJGh0dHBcbiAgICAgICAgICAuZGVsZXRlKGAke0FQSV9VUkx9L3Byb2ZpbGUvJHtpZH0uanNvbmApXG4gICAgICAgICAgLnN1Y2Nlc3MoY2IpO1xuICAgICAgfVxuICAgIH1cbiAgfSk7XG4iXX0=
+//       update(id, data, cb) {
+//         $http
+//           .put(`${API_URL}/profile/${id}.json`, data)
+//           .success(cb);
+//       },
+
+//       destroy(id, cb) {
+//         $http
+//           .delete(`${API_URL}/profile/${id}.json`)
+//           .success(cb);
+//       }
+//     }
+//   });
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXNzZXRzL3Byb2ZpbGUvcHJvZmlsZS5mYWN0b3J5LmpzIiwic291cmNlc0NvbnRlbnQiOltdfQ==

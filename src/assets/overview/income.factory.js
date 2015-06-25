@@ -17,7 +17,7 @@ angular
 
       create(data, cb) {
         $http
-          .post(`${API_URL}profiles/${authData.uid}/income`, data)
+          .post(`${API_URL}profiles/${fb.getAuth().uid}/income`, data)
           .success(cb);
       },
 

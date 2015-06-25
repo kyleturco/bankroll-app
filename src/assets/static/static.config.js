@@ -5,8 +5,8 @@ angular
       .when('/login', {
         templateUrl: 'assets/auth/login.html'
       })
-      .when('/overview', {
-        templateUrl: 'assets/static/overview.html'
+      .when('/register', {
+        templateUrl: 'assets/auth/register.html'
       })
       .when('/profile', {
         templateUrl: 'assets/static/profile.html'

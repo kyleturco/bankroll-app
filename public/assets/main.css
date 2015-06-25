@@ -25,5 +25,5 @@ p {
 .add-new-project, .add-new-expense {
   display: inline-block;
   border: 1px solid #dedede;
-  margin: 0px 25px 0px 0px;
+  margin: 0px 25px 15px 0px;
   padding: 0px 0px 15px 0px; }

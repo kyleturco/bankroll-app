@@ -5,6 +5,7 @@ angular
     var vm = this;
     vm.id = $routeParams.id;
 
+
     Income.getOne(vm.id, function (data) {
       vm.income = data;
     });
@@ -16,6 +17,7 @@ angular
     };
 
     vm.saveIncome = function () {
+      debugger;
       Income.create(vm.id, function () {
         console.log("is this shit working?");
       });

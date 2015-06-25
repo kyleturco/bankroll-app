@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .controller('LoginCtrl', function ($rootScope, $scope, $location, API_URL, $http) {
+  .controller('RegisterCtrl', function ($rootScope, $scope, $location, API_URL, $http) {
     var vm = this;
 
     vm.login = function (email, password) {
@@ -21,6 +21,7 @@ angular
       });
     };
 
+
     vm.register = function (email, password) {
       var fb = new Firebase('https://bankroll.firebaseio.com/profiles');
 
@@ -38,4 +39,3 @@ angular
       })
     };
   });
-

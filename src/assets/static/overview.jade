@@ -5,19 +5,20 @@
     .add-new-main
       .col-md-4.add-new-project
         h3 Add Income
-        .form-group
-          label.control-label Name
-          input.form-control(type="text" ng-model="main.income.name")
-        .form-group
-          label.control-label Amount
-          input.form-control(type="text" ng-model="main.income.amount")
-        .form-group
-          label.control-label Date
-          input.form-control(type="date" ng-model="main.income.date")
-        .form-group
-          label.control-label Notes
-          input.form-control(type="text" ng-model="main.income.notes")
-        button(class="btn btn-default" ng-click="main.saveIncome()") Add
+        form(name="newIncomeForm" ng-submit="main.saveIncome()")
+          .form-group
+            label.control-label Name
+            input.form-control(type="text" ng-model="main.income.name")
+          .form-group
+            label.control-label Amount
+            input.form-control(type="text" ng-model="main.income.amount")
+          .form-group
+            label.control-label Date
+            input.form-control(type="date" ng-model="main.income.date")
+          .form-group
+            label.control-label Notes
+            input.form-control(type="text" ng-model="main.income.notes")
+          button(class="btn btn-default" type="submit") Add
       .col-md-4.add-new-expense
         h3 Add Expense
         .form-group

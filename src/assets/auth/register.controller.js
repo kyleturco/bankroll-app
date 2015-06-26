@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .controller('RegisterCtrl', function ($rootScope, $scope, $location, API_URL, $http) {
+  .controller('RegisterCtrl', function ($scope, $location, API_URL, $http, currentUser) {
     var vm = this;
 
     vm.login = function (email, password) {
@@ -14,18 +14,17 @@ angular
         if (err) {
           console.log('Error', err)
         } else {
-          $rootScope.auth = authData;
+          currentUser.set(authData);
           $location.path('/overview');
           $scope.$apply();
         }
       });
     };
 
-
     vm.register = function (email, password) {
-      var fb = new Firebase('https://bankroll.firebaseio.com/profiles');
+      var ref = new Firebase('https://bankroll.firebaseio.com/profiles/');
 
-      fb.createUser({
+      ref.createUser({
         email: vm.email, 
         password: vm.password
       }, function (err, authData) {
@@ -34,7 +33,11 @@ angular
         } else {
           vm.login();
           console.log("User created successfully");
-          fb.push({id: authData.uid, income: {total: 0}, expenses: {total: 0}});
+
+          currentUser.set(authData);
+          // currentUser === {}
+          var profile = {};
+          ref.child(authData.uid).set(profile)
         }
       })
     };

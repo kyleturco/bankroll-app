@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .controller('LoginCtrl', function ($rootScope, $scope, $location, API_URL, $http) {
+  .controller('LoginCtrl', function ($scope, $location, API_URL, $http, currentUser) {
     var vm = this;
 
     vm.login = function (email, password) {
@@ -14,7 +14,7 @@ angular
         if (err) {
           console.log('Error', err)
         } else {
-          $rootScope.auth = authData;
+          currentUser.set(authData);
           $location.path('/overview');
           $scope.$apply();
         }

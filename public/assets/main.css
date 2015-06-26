@@ -12,6 +12,12 @@
   display: inline-block;
   float: right; }
 
+.header-logo {
+  font-size: 24px;
+  color: #1cbe68;
+  margin-bottom: 18px;
+  font-family: Roboto Slab; }
+
 /** Sidebar Styles **/
 .sidebar-box {
   border: 1px solid #dedede;

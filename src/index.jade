@@ -9,7 +9,7 @@ html(lang="en-US" ng-app="bankRoll")
     link(rel="stylesheet" href="assets/main.css")
     link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css")
     link(rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css")
-
+    link(href='http://fonts.googleapis.com/css?family=Roboto+Slab:400,700' rel='stylesheet' type='text/css')
   body
     .navbar
       .container
@@ -17,11 +17,12 @@ html(lang="en-US" ng-app="bankRoll")
           h1.header-logo <i class="fa fa-university"></i> Bankroll
           .header-links
             ul(class="list-inline")
-              li: a(href="/#/overview") Overview
-              li: a(href="/#/profile") Account
-              li(ng-hide="auth"): a(href="/#/login") Login
+              li(ng-show="auth"): a(href="/#/overview") Overview
+              li(ng-show="auth"): a(href="/#/profile") Account
         .header-nav-right
+            ul(class="list-inline")
               li(ng-show="auth"): a(href="/#/logout") Logout
+              li(ng-hide="auth"): a(href="/#/login") Login
     .content
       .container
         .app(ng-view)
@@ -47,5 +48,6 @@ html(lang="en-US" ng-app="bankRoll")
     script(src="assets/auth/login.controller.js")
     script(src="assets/auth/logout.controller.js")
     script(src="assets/auth/register.controller.js")
+    script(src="assets/auth/currentuser.factory.js")
 
 

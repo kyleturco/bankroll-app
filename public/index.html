@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="assets/main.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto+Slab:400,700" rel="stylesheet" type="text/css">
   </head>
   <body>
     <div class="navbar">
@@ -16,14 +17,16 @@
           <h1 class="header-logo"><i class="fa fa-university"></i> Bankroll</h1>
           <div class="header-links">
             <ul class="list-inline">
-              <li><a href="/#/overview">Overview</a></li>
-              <li><a href="/#/profile">Account</a></li>
-              <li ng-hide="auth"><a href="/#/login">Login</a></li>
+              <li ng-show="auth"><a href="/#/overview">Overview</a></li>
+              <li ng-show="auth"><a href="/#/profile">Account</a></li>
             </ul>
           </div>
         </div>
         <div class="header-nav-right">
-          <li ng-show="auth"><a href="/#/logout">Logout</a></li>
+          <ul class="list-inline">
+            <li ng-show="auth"><a href="/#/logout">Logout</a></li>
+            <li ng-hide="auth"><a href="/#/login">Login</a></li>
+          </ul>
         </div>
       </div>
     </div>
@@ -46,5 +49,6 @@
     <script src="assets/auth/login.controller.js"></script>
     <script src="assets/auth/logout.controller.js"></script>
     <script src="assets/auth/register.controller.js"></script>
+    <script src="assets/auth/currentuser.factory.js"></script>
   </body>
 </html>

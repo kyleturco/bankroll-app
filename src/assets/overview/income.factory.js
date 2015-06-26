@@ -1,11 +1,25 @@
 angular
   .module('bankRoll')
 
-  .factory('incomeFactory', function ($rootScope, $http, API_URL) {
+  .factory('incomeFactory', function ($rootScope, $http, API_URL, $firebaseArray, $firebaseObject) {
 
-    function incomeUrl(id) {
-      return API_URL + '/profiles/' + $rootScope.auth.uid + '/income.json?auth=' + $rootScope.auth.token;
-    }
+    var ref = new Firebase(API_URL).child('profiles');
+    var profiles = $firebaseArray(ref);
+
+    var currentUserRef = new Firebase(API_URL + 'profiles/').orderByChild('id').equalTo($rootScope.auth.uid);
+    var currentUserProfile = $firebaseObject(currentUserRef);
+
+    profiles.$getRecord()
+
+    // todo: save profiles with user id as firebase the object.$id
+
+    // currentUserProfile[currentUserProfile.$id].foo = 'bar';
+    // currentUserProfile.$save();
+
+
+    // function incomeUrl(id) {
+    //   return API_URL + '/profiles/' + $rootScope.auth.uid + '/income.json?auth=' + $rootScope.auth.token;
+    // }
 
     return {
       // getOne(id, cb) {

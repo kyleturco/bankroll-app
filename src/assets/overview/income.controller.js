@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .controller('IncomeController', function ($scope, $routeParams, $location, incomeFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
+  .controller('IncomeController', function ($scope, incomeFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
     var vm = this;
     // vm.id = $routeParams.id;
 
@@ -20,11 +20,12 @@ angular
       // incomeRef.push({'income': $scope.income});
 
       var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
-      profileRef.child(currentUser.uid).child('income').set(vm.income, function(err) {
+      profileRef.child(currentUser.uid).child('income').child(vm.income.name).set(vm.income, function(err) {
         console.log('done setting income, err:', err)
         // value has been set, can redirect the user or what ever
         vm.income = {};
         $scope.$apply();
+        console.log('did this update3?')
       });
     };
 

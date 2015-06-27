@@ -18,9 +18,9 @@ angular
     vm.saveIncome = function () {
       // var incomeRef = new Firebase(`https://bankroll.firebaseio.com/profiles/${currentUser.uid}/income`);
       // incomeRef.push({'income': $scope.income});
-
+      var randNum = (Math.floor(Math.random() * 1000000000000000));
       var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
-      profileRef.child(currentUser.uid).child('income').child(vm.income.name).set(vm.income, function(err) {
+      profileRef.child(currentUser.uid).child('income').child('income' + (randNum)).set(vm.income, function(err) {
         console.log('done setting income, err:', err)
         // value has been set, can redirect the user or what ever
         vm.income = {};

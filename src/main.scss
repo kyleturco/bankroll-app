@@ -5,6 +5,8 @@ h1, h2, h3, h4, h5 {
 
 p {
   font-family: 'Lato', sans-serif;
+  font-size: 17px;
+  line-height: 26px;
 }
 
 .subheader {
@@ -21,6 +23,11 @@ p {
   font-family: 'Lato';
   text-transform: uppercase;
   border: none;
+}
+
+.btn-primary:hover {
+  background-color: #24DB7A;
+  transition: 0.2s;
 }
 
 /** Header Styles **/
@@ -81,7 +88,10 @@ p {
 }
 
 .login-button {
-  margin-right: 20px;
+  width: 100%;
+  padding: 10px 0 10px 0;
+  margin: 15px 0 15px 0;
+  font-size: 18px;
 }
 
 
@@ -90,6 +100,7 @@ p {
   background: url("http://i58.tinypic.com/riu83a.jpg") no-repeat;
   background-size: cover;
   padding: 150px 0 150px 0;
+  margin-top: -20px;
 }
 
 .hero-text {
@@ -133,6 +144,23 @@ p.hero-text {
   }
 }
 
+/** Overview Page Styles **/
 
 
+/** Register Styles **/
+.register-section {
+  max-width: 450px;
+  padding: 25px;
+  margin: 0 auto;
+  margin-top:35px;
+  border: 1px solid #dedede;
+  border-radius: 5px;
+}
+
+.register-button {
+  width: 100%;
+  padding: 10px 0 10px 0;
+  margin: 15px 0 15px 0;
+  font-size: 18px;
+}
 

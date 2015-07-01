@@ -1,18 +1,23 @@
 
 <angular></angular>
-<div class="login-form">
-  <h2>Login to Bankroll</h2>
-  <form name="loginForm">
-    <div class="form-group">
-      <label class="control-label">Email</label>
-      <input type="email" ng-model="auth.email" class="form-control"/>
-    </div>
-    <div class="form-group">
-      <label class="control-label">Password</label>
-      <input type="password" ng-model="auth.password" class="form-control"/>
-      <div class="login-section">
-        <button ng-click="auth.login(auth.email, auth.password)" class="btn btn-primary login-button">Login</button><a href="/#/register" class="register-link">Register</a>
+<div class="container">
+  <div class="login-form">
+    <h2>Login to Bankroll</h2>
+    <form name="loginForm">
+      <div class="form-group">
+        <label class="control-label">Email</label>
+        <input type="email" ng-model="auth.email" class="form-control"/>
       </div>
-    </div>
-  </form>
+      <div class="form-group">
+        <label class="control-label">Password</label>
+        <input type="password" ng-model="auth.password" class="form-control"/>
+        <div class="login-section">
+          <button ng-click="auth.login(auth.email, auth.password)" class="btn btn-primary login-button">Login</button>
+        </div>
+        <div class="register-link">
+          <p>Don't have an account?<a href="/#/register" class="register-link"> Register now</a></p>
+        </div>
+      </div>
+    </form>
+  </div>
 </div>

@@ -4,7 +4,7 @@ angular
   .controller('IncomeController', function ($scope, incomeFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
     var vm = this;
 
-    Income.getAll(function(income){
+    currentUser.getAll(function(income){
       vm.income = income;
     });
     // vm.id = $routeParams.id;

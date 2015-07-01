@@ -12,11 +12,11 @@ angular
     profiles.$getRecord()
 
     return {
-      // getOne(id, cb) {
-      //   $http
-      //     .get(`${API_URL}profiles/${authData.uid}.json`)
-      //     .success(cb);
-      // },
+      getOne(id, cb) {
+        $http
+          .get(incomeUrl(), data)
+          .success(cb);
+      },
 
       getAll(cb) {
         $http

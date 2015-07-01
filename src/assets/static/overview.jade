@@ -1,58 +1,59 @@
 .overview-content
-  .col-md-8.left-side
-    h1 Financial Summary
-    hr
-    .add-new-main
-      .col-md-4.add-new-project
-        h3 Add Income
-        form(name="newIncomeForm" ng-submit="main.saveIncome()")
+  .container
+    .col-md-8.left-side
+      h1 Financial Summary
+      hr
+      .add-new-main
+        .col-md-4.add-new-project
+          h3 Add Income
+          form(name="newIncomeForm" ng-submit="main.saveIncome()")
+            .form-group
+              label.control-label Name
+              input.form-control(type="text" ng-model="main.income.name")
+            .form-group
+              label.control-label Amount
+              input.form-control(type="text" ng-model="main.income.amount")
+            .form-group
+              label.control-label Date
+              input.form-control(type="date" ng-model="main.income.date")
+            .form-group
+              label.control-label Notes
+              input.form-control(type="text" ng-model="main.income.notes")
+            button(class="btn btn-default" type="submit") Add
+        .col-md-4.add-new-expense
+          h3 Add Expense
           .form-group
             label.control-label Name
-            input.form-control(type="text" ng-model="main.income.name")
+            input.form-control(type="text")
           .form-group
             label.control-label Amount
-            input.form-control(type="text" ng-model="main.income.amount")
+            input.form-control(type="text")
           .form-group
             label.control-label Date
-            input.form-control(type="date" ng-model="main.income.date")
+            input.form-control(type="date")
           .form-group
             label.control-label Notes
-            input.form-control(type="text" ng-model="main.income.notes")
-          button(class="btn btn-default" type="submit") Add
-      .col-md-4.add-new-expense
-        h3 Add Expense
-        .form-group
-          label.control-label Name
-          input.form-control(type="text")
-        .form-group
-          label.control-label Amount
-          input.form-control(type="text")
-        .form-group
-          label.control-label Date
-          input.form-control(type="date")
-        .form-group
-          label.control-label Notes
-          input.form-control(type="text")
-        button(class="btn btn-default") Add
+            input.form-control(type="text")
+          button(class="btn btn-default") Add
 
-  .col-md-4.right-side
-    .income-total.sidebar-box
-      h2 Income
-      hr
-      p {{income.total}}
-    .expense-total.sidebar-box
-      h2 Expenses
-      hr
-      p {{expense.total}}
-
-.col-md-12
-  .income-list(ng-repeat="incomeItem in incomeList")
-    h3 Income List
-    .individual-income-item
-      hr
-      h3 {{main.income.name}}
-      p {{main.income.amount}}
-      p {{main.income.date}}
-      p {{main.income.notes}}
-      a.btn.btn-danger(ng-click="main.destroy()") Delete
+    .col-md-4.right-side
+      .income-total.sidebar-box
+        h2 Income
+        hr
+        p {{income.total}}
+      .expense-total.sidebar-box
+        h2 Expenses
+        hr
+        p {{expense.total}}
+  .container
+    .col-md-12
+      .income-list(ng-repeat="incomeItem in incomeList")
+        h3 Income List
+        .individual-income-item
+          hr
+          h3 {{main.income.name}}
+          p {{main.income.amount}}
+          p {{main.income.date}}
+          p {{main.income.notes}}
+          a.btn.btn-danger(ng-click="main.destroy()") Delete
 

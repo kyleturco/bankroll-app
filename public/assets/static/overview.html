@@ -1,75 +1,79 @@
 
 <div class="overview-content">
-  <div class="col-md-8 left-side">
-    <h1>Financial Summary</h1>
-    <hr/>
-    <div class="add-new-main">
-      <div class="col-md-4 add-new-project">
-        <h3>Add Income</h3>
-        <form name="newIncomeForm" ng-submit="main.saveIncome()">
+  <div class="container">
+    <div class="col-md-8 left-side">
+      <h1>Financial Summary</h1>
+      <hr/>
+      <div class="add-new-main">
+        <div class="col-md-4 add-new-project">
+          <h3>Add Income</h3>
+          <form name="newIncomeForm" ng-submit="main.saveIncome()">
+            <div class="form-group">
+              <label class="control-label">Name</label>
+              <input type="text" ng-model="main.income.name" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Amount</label>
+              <input type="text" ng-model="main.income.amount" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Date</label>
+              <input type="date" ng-model="main.income.date" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label class="control-label">Notes</label>
+              <input type="text" ng-model="main.income.notes" class="form-control"/>
+            </div>
+            <button type="submit" class="btn btn-default">Add</button>
+          </form>
+        </div>
+        <div class="col-md-4 add-new-expense">
+          <h3>Add Expense</h3>
           <div class="form-group">
             <label class="control-label">Name</label>
-            <input type="text" ng-model="main.income.name" class="form-control"/>
+            <input type="text" class="form-control"/>
           </div>
           <div class="form-group">
             <label class="control-label">Amount</label>
-            <input type="text" ng-model="main.income.amount" class="form-control"/>
+            <input type="text" class="form-control"/>
           </div>
           <div class="form-group">
             <label class="control-label">Date</label>
-            <input type="date" ng-model="main.income.date" class="form-control"/>
+            <input type="date" class="form-control"/>
           </div>
           <div class="form-group">
             <label class="control-label">Notes</label>
-            <input type="text" ng-model="main.income.notes" class="form-control"/>
+            <input type="text" class="form-control"/>
           </div>
-          <button type="submit" class="btn btn-default">Add</button>
-        </form>
+          <button class="btn btn-default">Add</button>
+        </div>
       </div>
-      <div class="col-md-4 add-new-expense">
-        <h3>Add Expense</h3>
-        <div class="form-group">
-          <label class="control-label">Name</label>
-          <input type="text" class="form-control"/>
-        </div>
-        <div class="form-group">
-          <label class="control-label">Amount</label>
-          <input type="text" class="form-control"/>
-        </div>
-        <div class="form-group">
-          <label class="control-label">Date</label>
-          <input type="date" class="form-control"/>
-        </div>
-        <div class="form-group">
-          <label class="control-label">Notes</label>
-          <input type="text" class="form-control"/>
-        </div>
-        <button class="btn btn-default">Add</button>
+    </div>
+    <div class="col-md-4 right-side">
+      <div class="income-total sidebar-box">
+        <h2>Income</h2>
+        <hr/>
+        <p>{{income.total}}</p>
+      </div>
+      <div class="expense-total sidebar-box">
+        <h2>Expenses</h2>
+        <hr/>
+        <p>{{expense.total}}</p>
       </div>
     </div>
   </div>
-  <div class="col-md-4 right-side">
-    <div class="income-total sidebar-box">
-      <h2>Income</h2>
-      <hr/>
-      <p>{{income.total}}</p>
-    </div>
-    <div class="expense-total sidebar-box">
-      <h2>Expenses</h2>
-      <hr/>
-      <p>{{expense.total}}</p>
-    </div>
-  </div>
-</div>
-<div class="col-md-12">
-  <div ng-repeat="incomeItem in incomeList" class="income-list">
-    <h3>Income List</h3>
-    <div class="individual-income-item">
-      <hr/>
-      <h3>{{main.income.name}}</h3>
-      <p>{{main.income.amount}}</p>
-      <p>{{main.income.date}}</p>
-      <p>{{main.income.notes}}</p><a ng-click="main.destroy()" class="btn btn-danger">Delete</a>
+  <div class="container">
+    <div class="col-md-12">
+      <div ng-repeat="incomeItem in incomeList" class="income-list">
+        <h3>Income List</h3>
+        <div class="individual-income-item">
+          <hr/>
+          <h3>{{main.income.name}}</h3>
+          <p>{{main.income.amount}}</p>
+          <p>{{main.income.date}}</p>
+          <p>{{main.income.notes}}</p><a ng-click="main.destroy()" class="btn btn-danger">Delete</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>

@@ -3,6 +3,10 @@ angular
 
   .controller('IncomeController', function ($scope, incomeFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
     var vm = this;
+
+    Income.getAll(function(income){
+      vm.income = income;
+    });
     // vm.id = $routeParams.id;
 
     // Income.getOne(vm.id, function (data) {
@@ -20,12 +24,13 @@ angular
       // incomeRef.push({'income': $scope.income});
       var randNum = (Math.floor(Math.random() * 1000000000000000));
       var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
+      $scope.incomeList = $firebaseObject(profileRef);
       profileRef.child(currentUser.uid).child('income').child('income' + (randNum)).set(vm.income, function(err) {
         console.log('done setting income, err:', err)
+
         // value has been set, can redirect the user or what ever
         vm.income = {};
         $scope.$apply();
-        console.log('did this update3?')
       });
     };
 

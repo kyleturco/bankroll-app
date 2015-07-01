@@ -61,3 +61,15 @@
     </div>
   </div>
 </div>
+<div class="col-md-12">
+  <div ng-repeat="incomeItem in incomeList" class="income-list">
+    <h3>Income List</h3>
+    <div class="individual-income-item">
+      <hr/>
+      <h3>{{main.income.name}}</h3>
+      <p>{{main.income.amount}}</p>
+      <p>{{main.income.date}}</p>
+      <p>{{main.income.notes}}</p><a ng-click="main.destroy()" class="btn btn-danger">Delete</a>
+    </div>
+  </div>
+</div>

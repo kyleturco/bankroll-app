@@ -24,8 +24,6 @@ angular
     // };
 
     vm.saveIncome = function () {
-      // var incomeRef = new Firebase(`https://bankroll.firebaseio.com/profiles/${currentUser.uid}/income`);
-      // incomeRef.push({'income': $scope.income});
       var randNum = (Math.floor(Math.random() * 1000000000000000));
       var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
       $scope.incomeList = $firebaseObject(profileRef);

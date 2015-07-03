@@ -67,7 +67,7 @@
       <div class="income-list">
         <h3>Income List</h3>
       </div>
-      <div ng-repeat="incomeItem in incomeList" class="individual-income-item">
+      <div ng-repeat="incomeItem in incomeList | orderBy:'date'" class="individual-income-item">
         <hr/>
         <h3 class="income-list-header">Project Name
           <p>{{incomeItem.name}}</p>

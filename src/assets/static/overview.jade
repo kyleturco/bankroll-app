@@ -49,7 +49,7 @@
     .col-md-12
       .income-list
         h3 Income List
-      .individual-income-item(ng-repeat="incomeItem in incomeList")
+      .individual-income-item(ng-repeat="incomeItem in incomeList | orderBy:'date'")
         hr
         h3.income-list-header Project Name
           p {{incomeItem.name}}

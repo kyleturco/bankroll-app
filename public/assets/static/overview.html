@@ -64,15 +64,23 @@
   </div>
   <div class="container">
     <div class="col-md-12">
-      <div ng-repeat="incomeItem in incomeList" class="income-list">
+      <div class="income-list">
         <h3>Income List</h3>
-        <div class="individual-income-item">
-          <hr/>
-          <h3>{{main.income.name}}</h3>
+      </div>
+      <div ng-repeat="incomeItem in incomeList" class="individual-income-item">
+        <hr/>
+        <h3 class="income-list-header">Project Name
+          <p>{{main.income.name}}</p>
+        </h3>
+        <h3 class="income-list-header">Amount
           <p>{{main.income.amount}}</p>
+        </h3>
+        <h3 class="income-list-header">Date
           <p>{{main.income.date}}</p>
-          <p>{{main.income.notes}}</p><a ng-click="main.destroy()" class="btn btn-danger">Delete</a>
-        </div>
+        </h3>
+        <h3 class="income-list-header">Notes
+          <p>{{main.income.notes}}</p>
+        </h3><a ng-click="main.destroy()" class="btn btn-danger">Delete</a>
       </div>
     </div>
   </div>

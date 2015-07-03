@@ -47,13 +47,17 @@
         p {{expense.total}}
   .container
     .col-md-12
-      .income-list(ng-repeat="incomeItem in incomeList")
+      .income-list
         h3 Income List
-        .individual-income-item
-          hr
-          h3 {{main.income.name}}
+      .individual-income-item(ng-repeat="incomeItem in incomeList")
+        hr
+        h3.income-list-header Project Name
+          p {{main.income.name}}
+        h3.income-list-header Amount
           p {{main.income.amount}}
+        h3.income-list-header Date
           p {{main.income.date}}
+        h3.income-list-header Notes
           p {{main.income.notes}}
-          a.btn.btn-danger(ng-click="main.destroy()") Delete
+        a.btn.btn-danger(ng-click="main.destroy()") Delete
 

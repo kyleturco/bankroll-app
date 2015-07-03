@@ -4,9 +4,13 @@ angular
   .controller('IncomeController', function ($scope, incomeFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
     var vm = this;
 
-    currentUser.getAll(function(income){
-      vm.income = income;
-    });
+    var fb = new Firebase(API_URL);
+    var authData = fb.getAuth();
+
+
+    // Income.getAll(function(income){
+    //   vm.income = income;
+    // });
     // vm.id = $routeParams.id;
 
     // Income.getOne(vm.id, function (data) {

@@ -14,20 +14,23 @@ angular
     return {
       getOne(id, cb) {
         $http
-          .get(incomeUrl(), data)
+          .get(currentUserRef(), data)
           .success(cb);
+          console.log("did anything happen with this? 1")
       },
 
       getAll(cb) {
         $http
-          .get(incomeUrl(), data)
+          .get(currentUserRef(), data)
           .success(cb);
+          console.log("did anything happen with this? 2")
       },
 
       create(data, cb) {
         $http
-          .post(incomeUrl(), data)
+          .post(currentUserRef(), data)
           .success(cb);
+          console.log("did anything happen with this? 3")
       },
 
       // update(id, data, cb) {

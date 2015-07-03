@@ -45,6 +45,10 @@ p {
   margin-bottom: 18px;
   font-family: Roboto Slab; }
 
+.header-links {
+  font-family: 'Hind', sans-serif;
+  color: #505050; }
+
 /** Sidebar Styles **/
 .sidebar-box {
   border: 1px solid #dedede;
@@ -134,3 +138,11 @@ p.hero-text {
   padding: 10px 0 10px 0;
   margin: 15px 0 15px 0;
   font-size: 18px; }
+
+.add-new-project {
+  padding: 15px;
+  min-width: 45%; }
+
+.add-new-expense {
+  padding: 15px;
+  min-width: 45%; }

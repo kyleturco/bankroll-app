@@ -70,16 +70,16 @@
       <div ng-repeat="incomeItem in incomeList" class="individual-income-item">
         <hr/>
         <h3 class="income-list-header">Project Name
-          <p>{{main.income.name}}</p>
+          <p>{{incomeItem.name}}</p>
         </h3>
         <h3 class="income-list-header">Amount
-          <p>{{main.income.amount}}</p>
+          <p>{{incomeItem.amount}}</p>
         </h3>
         <h3 class="income-list-header">Date
-          <p>{{main.income.date}}</p>
+          <p>{{incomeItem.date}}</p>
         </h3>
         <h3 class="income-list-header">Notes
-          <p>{{main.income.notes}}</p>
+          <p>{{incomeItem.notes}}</p>
         </h3><a ng-click="main.destroy()" class="btn btn-danger">Delete</a>
       </div>
     </div>

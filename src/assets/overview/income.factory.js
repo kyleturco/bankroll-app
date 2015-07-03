@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .factory('incomeFactory', function ($rootScope, $http, API_URL, $firebaseArray, $firebaseObject) {
+  .factory('incomeFactory', function ($rootScope, $http, API_URL, $firebaseArray, $firebaseObject, currentUser) {
 
     var ref = new Firebase(API_URL).child('profiles');
     var profiles = $firebaseArray(ref);
@@ -12,26 +12,27 @@ angular
     profiles.$getRecord()
 
     return {
-      getOne(id, cb) {
+      // getOne(id, cb) {
+      //   $http
+      //     .get(currentUserRef)
+      //     .success(cb);
+      //     console.log("did anything happen with this? 1")
+      // },
+
+      allIncome(cb) {
         $http
-          .get(currentUserRef(), data)
+          .get('https://bankroll.firebaseio.com/profiles/simplelogin%3A84/income.json')
+          // .get(`${API_URL}profiles/${currentUser.uid}/income.json`)
           .success(cb);
-          console.log("did anything happen with this? 1")
+          console.log(currentUser.uid)
       },
 
-      getAll(cb) {
-        $http
-          .get(currentUserRef(), data)
-          .success(cb);
-          console.log("did anything happen with this? 2")
-      },
-
-      create(data, cb) {
-        $http
-          .post(currentUserRef(), data)
-          .success(cb);
-          console.log("did anything happen with this? 3")
-      },
+      // create(data, cb) {
+      //   $http
+      //     .post(currentUserRef, data)
+      //     .success(cb);
+      //     console.log("did anything happen with this? 3")
+      // },
 
       // update(id, data, cb) {
       //   $http

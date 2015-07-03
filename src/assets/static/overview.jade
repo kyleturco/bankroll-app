@@ -52,12 +52,12 @@
       .individual-income-item(ng-repeat="incomeItem in incomeList")
         hr
         h3.income-list-header Project Name
-          p {{main.income.name}}
+          p {{incomeItem.name}}
         h3.income-list-header Amount
-          p {{main.income.amount}}
+          p {{incomeItem.amount}}
         h3.income-list-header Date
-          p {{main.income.date}}
+          p {{incomeItem.date}}
         h3.income-list-header Notes
-          p {{main.income.notes}}
+          p {{incomeItem.notes}}
         a.btn.btn-danger(ng-click="main.destroy()") Delete
 

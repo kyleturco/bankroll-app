@@ -143,14 +143,14 @@ p.hero-text {
   background: #ffa500;
   color: #ffffff;
   margin: 25px 8px 0 0; }
-  .edit-btn :hover {
-    background: #D83C3C; }
+  .edit-btn:hover {
+    background: #EF9B00; }
 
 .delete-btn {
   background: #ff4c4c;
   color: #ffffff;
   margin: 25px 8px 0 0; }
-  .delete-btn :hover {
+  .delete-btn:hover {
     background: #D83C3C; }
 
 /** Register Styles **/

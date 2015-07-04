@@ -175,8 +175,8 @@ p.hero-text {
   background: #ffa500;
   color: #ffffff;
   margin: 25px 8px 0 0;
-  :hover {
-    background: #D83C3C;
+  &:hover {
+    background: #EF9B00;
   }
 }
 
@@ -184,7 +184,7 @@ p.hero-text {
   background: #ff4c4c;
   color: #ffffff;
   margin: 25px 8px 0 0;
-  :hover {
+  &:hover {
     background: #D83C3C;
   }
 }

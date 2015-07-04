@@ -19,22 +19,23 @@
             .form-group
               label.control-label Notes
               input.form-control(type="text" ng-model="main.income.notes")
-            button(class="btn btn-default" type="submit") Add
+            button(class="btn btn-primary" type="submit") Add
         .col-md-4.add-new-expense
           h3 Add Expense
-          .form-group
-            label.control-label Name
-            input.form-control(type="text")
-          .form-group
-            label.control-label Amount
-            input.form-control(type="text")
-          .form-group
-            label.control-label Date
-            input.form-control(type="date")
-          .form-group
-            label.control-label Notes
-            input.form-control(type="text")
-          button(class="btn btn-default") Add
+          form(name="newExpenseForm" ng-submit="second.saveExpense()")
+            .form-group
+              label.control-label Name
+              input.form-control(type="text" ng-model="second.expense.name")
+            .form-group
+              label.control-label Amount
+              input.form-control(type="text" ng-model="second.expense.amount")
+            .form-group
+              label.control-label Date
+              input.form-control(type="date" ng-model="second.expense.date")
+            .form-group
+              label.control-label Notes
+              input.form-control(type="text" ng-model="second.expense.notes")
+            button(class="btn btn-default" type="submit") Add
 
     .col-md-4.right-side
       .income-total.sidebar-box
@@ -62,4 +63,20 @@
         .button-section.col-md-2
           a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
           a.btn.btn-primary.delete-btn(ng-click="main.destroy()") <i class="fa fa-ban"></i>
+
+      .expense-list
+        h3 Expense List
+      .individual-income-item.col-md-12.no-left-padding-column(ng-repeat="expenseItem in expenseList | orderBy:'date'")
+        hr.income-list-hr
+        h3.income-list-header.col-md-3 Project
+          p.income-list-data {{expenseItem.name}}
+        h3.income-list-header.col-md-2 Amount
+          p.income-list-data {{expenseItem.amount}}
+        h3.income-list-header.col-md-2 Date
+          p.income-list-data {{expenseItem.date | date: "yyyy-MM-dd"}}
+        h3.income-list-header.col-md-3 Notes
+          p.income-list-data {{expenseItem.notes}}
+        .button-section.col-md-2
+          a.btn.btn-primary.edit-btn(ng-click="second.edit()") <i class="fa fa-pencil-square-o"></i>
+          a.btn.btn-primary.delete-btn(ng-click="second.destroy()") <i class="fa fa-ban"></i>
 

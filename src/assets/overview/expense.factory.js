@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .factory('incomeFactory', function ($rootScope, $http, API_URL, $firebaseArray, $firebaseObject, currentUser) {
+  .factory('expenseFactory', function ($rootScope, $http, API_URL, $firebaseArray, $firebaseObject, currentUser) {
 
     var ref = new Firebase(API_URL).child('profiles');
     var profiles = $firebaseArray(ref);

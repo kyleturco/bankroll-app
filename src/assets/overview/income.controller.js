@@ -29,6 +29,7 @@ angular
     // };
 
     vm.saveIncome = function () {
+      debugger;
       var randNum = (Math.floor(Math.random() * 1000000000000000));
       var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
       vm.income.time = Date();

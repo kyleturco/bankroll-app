@@ -1,5 +1,5 @@
 .overview-content
-  .container
+  .container.no-left-padding-column
     .col-md-8.left-side
       h1 Financial Summary
       hr
@@ -45,19 +45,21 @@
         h2 Expenses
         hr
         p {{expense.total}}
+
   .container
-    .col-md-12
       .income-list
         h3 Income List
-      .individual-income-item(ng-repeat="incomeItem in incomeList | orderBy:'date'")
-        hr
-        h3.income-list-header Project Name
-          p {{incomeItem.name}}
-        h3.income-list-header Amount
-          p {{incomeItem.amount}}
-        h3.income-list-header Date
-          p {{incomeItem.date}}
-        h3.income-list-header Notes
-          p {{incomeItem.notes}}
-        a.btn.btn-danger(ng-click="main.destroy()") Delete
+      .individual-income-item.col-md-12.no-left-padding-column(ng-repeat="incomeItem in incomeList | orderBy:'date'")
+        hr.income-list-hr
+        h3.income-list-header.col-md-3 Project
+          p.income-list-data {{incomeItem.name}}
+        h3.income-list-header.col-md-2 Amount
+          p.income-list-data {{incomeItem.amount}}
+        h3.income-list-header.col-md-2 Date
+          p.income-list-data {{incomeItem.date | date: "yyyy-MM-dd"}}
+        h3.income-list-header.col-md-3 Notes
+          p.income-list-data {{incomeItem.notes}}
+        .button-section.col-md-2
+          a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
+          a.btn.btn-primary.delete-btn(ng-click="main.destroy()") <i class="fa fa-ban"></i>
 

@@ -32,7 +32,8 @@ angular
       var randNum = (Math.floor(Math.random() * 1000000000000000));
       var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
       vm.income.time = Date();
-      profileRef.child($rootScope.auth.uid).child('income').child('income' + (randNum)).set(vm.income, function(err) {
+      vm.income.date = JSON.stringify(vm.income.date);
+      profileRef.child($rootScope.auth.uid + '/income' + '/income' + (randNum)).set(vm.income, function(err) {
         console.log('done setting income, err:', err);
       // $scope.incomeList = $firebaseObject(profileRef);
         // value has been set, can redirect the user or what ever

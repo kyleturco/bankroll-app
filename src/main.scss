@@ -1,4 +1,8 @@
 /** Global Font Styles **/
+.no-left-padding-column {
+  padding: 0px 20px 0px 0px;
+}
+
 h1, h2, h3, h4, h5 {
   font-family: 'Hind';
 }
@@ -29,6 +33,7 @@ p {
   background-color: #24DB7A;
   transition: 0.2s;
 }
+
 
 /** Header Styles **/
 .navbar {
@@ -150,7 +155,39 @@ p.hero-text {
 }
 
 /** Overview Page Styles **/
+.income-list-header {
+  font-size: 16px;
+}
 
+.income-list-data {
+  font-size: 16px;
+}
+
+.income-list-hr {
+  margin: 0px;
+}
+
+.income-list-header.col-md-3{
+  padding-left: 0px;
+}
+
+.edit-btn {
+  background: #ffa500;
+  color: #ffffff;
+  margin: 25px 8px 0 0;
+  :hover {
+    background: #D83C3C;
+  }
+}
+
+.delete-btn {
+  background: #ff4c4c;
+  color: #ffffff;
+  margin: 25px 8px 0 0;
+  :hover {
+    background: #D83C3C;
+  }
+}
 
 /** Register Styles **/
 .register-section {

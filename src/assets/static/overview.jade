@@ -22,20 +22,20 @@
             button(class="btn btn-primary" type="submit") Add
         .col-md-4.add-new-expense
           h3 Add Expense
-          form(name="newExpenseForm" ng-submit="second.saveExpense()")
+          form(name="newExpenseForm" ng-submit="main.saveExpense()")
             .form-group
               label.control-label Name
-              input.form-control(type="text" ng-model="second.expense.name")
+              input.form-control(type="text" ng-model="main.expense.name")
             .form-group
               label.control-label Amount
-              input.form-control(type="text" ng-model="second.expense.amount")
+              input.form-control(type="text" ng-model="main.expense.amount")
             .form-group
               label.control-label Date
-              input.form-control(type="date" ng-model="second.expense.date")
+              input.form-control(type="date" ng-model="main.expense.date")
             .form-group
               label.control-label Notes
-              input.form-control(type="text" ng-model="second.expense.notes")
-            button(class="btn btn-default" type="submit") Add
+              input.form-control(type="text" ng-model="main.expense.notes")
+            button(class="btn btn-primary" type="submit") Add
 
     .col-md-4.right-side
       .income-total.sidebar-box

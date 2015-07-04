@@ -5,14 +5,14 @@ angular
     $routeProvider
       .when('/overview', {
         templateUrl: 'assets/static/overview.html',
-        controller: 'IncomeController',
+        controller: 'FinanceController',
         controllerAs: 'main'
       })
-      .when('/overview', {
-        templateUrl: 'assets/static/overview.html',
-        controller: 'ExpenseController',
-        controllerAs: 'second',
-      })
+      // .when('/overview', {
+      //   templateUrl: 'assets/static/overview.html',
+      //   controller: 'ExpenseController',
+      //   controllerAs: 'second',
+      // })
       // .when('/people/:id', {
       //   templateUrl: 'assets/people/person.html',
       //   controller: 'PersonController',

@@ -29,24 +29,24 @@
         </div>
         <div class="col-md-4 add-new-expense">
           <h3>Add Expense</h3>
-          <form name="newExpenseForm" ng-submit="second.saveExpense()">
+          <form name="newExpenseForm" ng-submit="main.saveExpense()">
             <div class="form-group">
               <label class="control-label">Name</label>
-              <input type="text" ng-model="second.expense.name" class="form-control"/>
+              <input type="text" ng-model="main.expense.name" class="form-control"/>
             </div>
             <div class="form-group">
               <label class="control-label">Amount</label>
-              <input type="text" ng-model="second.expense.amount" class="form-control"/>
+              <input type="text" ng-model="main.expense.amount" class="form-control"/>
             </div>
             <div class="form-group">
               <label class="control-label">Date</label>
-              <input type="date" ng-model="second.expense.date" class="form-control"/>
+              <input type="date" ng-model="main.expense.date" class="form-control"/>
             </div>
             <div class="form-group">
               <label class="control-label">Notes</label>
-              <input type="text" ng-model="second.expense.notes" class="form-control"/>
+              <input type="text" ng-model="main.expense.notes" class="form-control"/>
             </div>
-            <button type="submit" class="btn btn-default">Add</button>
+            <button type="submit" class="btn btn-primary">Add</button>
           </form>
         </div>
       </div>

@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .controller('IncomeController', function ($scope, incomeFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
+  .controller('FinanceController', function ($scope, financeFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
     var vm = this;
     var fb = new Firebase(API_URL);
     // var authData = fb.getAuth();
@@ -10,26 +10,12 @@ angular
     var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles');
     var currentUserIncome = profileRef.child($rootScope.auth.uid).child('income');
     $scope.incomeList = $firebaseObject(currentUserIncome);
-    console.log(currentUserIncome);
 
-    incomeFactory.allIncome(function(income){
-      vm.income = income;
-    });
-
-    // vm.id = currentUser.uid;
-
-    // incomeFactory.getOne(vm.id, function (income) {
-    //   vm.income = income;
-    // });
-
-    // vm.destroy = function (id) {
-    //   incomeFactory.destroy(vm.id, function () {
-    //     $location.path('/overview');
-    //   });
-    // };
+    var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles');
+    var currentUserExpense = profileRef.child($rootScope.auth.uid).child('expense');
+    $scope.expenseList = $firebaseObject(currentUserExpense);
 
     vm.saveIncome = function () {
-      debugger;
       var randNum = (Math.floor(Math.random() * 1000000000000000));
       var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
       vm.income.time = Date();
@@ -42,5 +28,18 @@ angular
         $scope.$apply();
       });
     };
-    // vm.onModalLoad = function () {};
+
+    vm.saveExpense = function () {
+      var randNum = (Math.floor(Math.random() * 1000000000000000));
+      var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
+      vm.expense.time = Date();
+      vm.expense.date = JSON.stringify(vm.expense.date);
+      profileRef.child($rootScope.auth.uid + '/expense' + '/expense' + (randNum)).set(vm.expense, function(err) {
+        console.log('done setting expense, err:', err);
+      // $scope.incomeList = $firebaseObject(profileRef);
+        // value has been set, can redirect the user or what ever
+        vm.expense = {};
+        $scope.$apply();
+      });
+    };
 });

@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .controller('ExpenseController', function ($scope, expenseFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
+  .controller('FinanceController', function ($scope, expenseFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
     var vm = this;
     var fb = new Firebase(API_URL);
     // var authData = fb.getAuth();
@@ -15,7 +15,6 @@ angular
     // });
 
     vm.saveExpense = function () {
-      debugger;
       var randNum = (Math.floor(Math.random() * 1000000000000000));
       var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
       vm.expense.time = Date();

@@ -1,8 +1,7 @@
 .overview-content
   .container.no-left-padding-column
     .col-md-8.left-side
-      h1 Financial Summary
-      hr
+      h2 Financial Summary
       .add-new-main
         .col-md-4.add-new-project
           h3 Add Income
@@ -38,18 +37,17 @@
             button(class="btn btn-primary" type="submit") Add
 
     .col-md-4.right-side
-      .income-total.sidebar-box
-        h2 Income
+      .totals.sidebar-box
+        h2 Totals
         hr
-        p {{income.total}}
-      .expense-total.sidebar-box
-        h2 Expenses
-        hr
-        p {{expense.total}}
+        h3 Income
+          p {{income.total}}
+        h3 Expenses
+          p {{expense.total}}
 
   .container
-      .income-list
-        h3 Income List
+    .income-list
+      h3 Income List
       .individual-income-item.col-md-12.no-left-padding-column(ng-repeat="incomeItem in incomeList | orderBy:'date'")
         hr.income-list-hr
         h3.income-list-header.col-md-3 Project
@@ -62,10 +60,10 @@
           p.income-list-data {{incomeItem.notes}}
         .button-section.col-md-2
           a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
-          a.btn.btn-primary.delete-btn(ng-click="main.destroy()") <i class="fa fa-ban"></i>
+          a.btn.btn-primary.delete-btn(ng-click="main.deleteIncome()") <i class="fa fa-ban"></i>
 
-      .expense-list
-        h3 Expense List
+    .expense-list
+      h3 Expense List
       .individual-income-item.col-md-12.no-left-padding-column(ng-repeat="expenseItem in expenseList | orderBy:'date'")
         hr.income-list-hr
         h3.income-list-header.col-md-3 Project

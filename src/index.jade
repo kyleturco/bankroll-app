@@ -17,17 +17,18 @@ html(lang="en-US" ng-app="bankRoll")
     .navbar
       .container
         .header-nav-left
-          h1.header-logo <i class="fa fa-university"></i> Bankroll
+          .header-logo
+            h1.header-logo-text <i class="fa fa-university"></i> Bankroll
           .header-links
             ul(class="list-inline")
               li(ng-show="auth"): a(href="/#/overview") Overview
               li(ng-show="auth"): a(href="/#/profile") Account
         .header-nav-right
+          .log-buttons
             ul(class="list-inline")
               li(ng-show="auth"): a(href="/#/logout") Logout
               li(ng-hide="auth"): a(href="/#/login") Login
     .content
-      //- .container
       .app(ng-view)
 
     script(src="lib/build.js")
@@ -43,6 +44,7 @@ html(lang="en-US" ng-app="bankRoll")
     script(src="assets/overview/overview.config.js")
 
     script(src="assets/static/static.config.js")
+    script(src="assets/static/buttons.controller.js")
 
     script(src="assets/auth/auth.config.js")
     script(src="assets/auth/login.controller.js")

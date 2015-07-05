@@ -11,7 +11,6 @@ angular
     var currentUserIncome = profileRef.child($rootScope.auth.uid).child('income');
     $scope.incomeList = $firebaseObject(currentUserIncome);
 
-    var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles');
     var currentUserExpense = profileRef.child($rootScope.auth.uid).child('expense');
     $scope.expenseList = $firebaseObject(currentUserExpense);
 
@@ -22,6 +21,7 @@ angular
       vm.income.date = JSON.stringify(vm.income.date);
       profileRef.child($rootScope.auth.uid + '/income' + '/income' + (randNum)).set(vm.income, function(err) {
         console.log('done setting income, err:', err);
+        $scope.incomeID = ('income' + (randNum));
       // $scope.incomeList = $firebaseObject(profileRef);
         // value has been set, can redirect the user or what ever
         vm.income = {};
@@ -42,4 +42,11 @@ angular
         $scope.$apply();
       });
     };
+
+    vm.deleteIncome = function (profileRef, currentUserIncome) {
+      // delete $scope.incomeList[currentUserIncome];
+      var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles/');
+      var currentUserIncome = profileRef.child($rootScope.auth.uid).child('income');
+      currentUserIncome.remove();
+    }
 });

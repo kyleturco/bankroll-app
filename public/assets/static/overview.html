@@ -2,8 +2,7 @@
 <div class="overview-content">
   <div class="container no-left-padding-column">
     <div class="col-md-8 left-side">
-      <h1>Financial Summary</h1>
-      <hr/>
+      <h2>Financial Summary</h2>
       <div class="add-new-main">
         <div class="col-md-4 add-new-project">
           <h3>Add Income</h3>
@@ -52,56 +51,56 @@
       </div>
     </div>
     <div class="col-md-4 right-side">
-      <div class="income-total sidebar-box">
-        <h2>Income</h2>
+      <div class="totals sidebar-box">
+        <h2>Totals</h2>
         <hr/>
-        <p>{{income.total}}</p>
-      </div>
-      <div class="expense-total sidebar-box">
-        <h2>Expenses</h2>
-        <hr/>
-        <p>{{expense.total}}</p>
+        <h3>Income
+          <p>{{income.total}}</p>
+        </h3>
+        <h3>Expenses
+          <p>{{expense.total}}</p>
+        </h3>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="income-list">
       <h3>Income List</h3>
-    </div>
-    <div ng-repeat="incomeItem in incomeList | orderBy:'date'" class="individual-income-item col-md-12 no-left-padding-column">
-      <hr class="income-list-hr"/>
-      <h3 class="income-list-header col-md-3">Project
-        <p class="income-list-data">{{incomeItem.name}}</p>
-      </h3>
-      <h3 class="income-list-header col-md-2">Amount
-        <p class="income-list-data">{{incomeItem.amount}}</p>
-      </h3>
-      <h3 class="income-list-header col-md-2">Date
-        <p class="income-list-data">{{incomeItem.date | date: "yyyy-MM-dd"}}</p>
-      </h3>
-      <h3 class="income-list-header col-md-3">Notes
-        <p class="income-list-data">{{incomeItem.notes}}</p>
-      </h3>
-      <div class="button-section col-md-2"><a ng-click="main.edit()" class="btn btn-primary edit-btn"><i class="fa fa-pencil-square-o"></i></a><a ng-click="main.destroy()" class="btn btn-primary delete-btn"><i class="fa fa-ban"></i></a></div>
+      <div ng-repeat="incomeItem in incomeList | orderBy:'date'" class="individual-income-item col-md-12 no-left-padding-column">
+        <hr class="income-list-hr"/>
+        <h3 class="income-list-header col-md-3">Project
+          <p class="income-list-data">{{incomeItem.name}}</p>
+        </h3>
+        <h3 class="income-list-header col-md-2">Amount
+          <p class="income-list-data">{{incomeItem.amount}}</p>
+        </h3>
+        <h3 class="income-list-header col-md-2">Date
+          <p class="income-list-data">{{incomeItem.date | date: "yyyy-MM-dd"}}</p>
+        </h3>
+        <h3 class="income-list-header col-md-3">Notes
+          <p class="income-list-data">{{incomeItem.notes}}</p>
+        </h3>
+        <div class="button-section col-md-2"><a ng-click="main.edit()" class="btn btn-primary edit-btn"><i class="fa fa-pencil-square-o"></i></a><a ng-click="main.deleteIncome()" class="btn btn-primary delete-btn"><i class="fa fa-ban"></i></a></div>
+      </div>
     </div>
     <div class="expense-list">
       <h3>Expense List</h3>
-    </div>
-    <div ng-repeat="expenseItem in expenseList | orderBy:'date'" class="individual-income-item col-md-12 no-left-padding-column">
-      <hr class="income-list-hr"/>
-      <h3 class="income-list-header col-md-3">Project
-        <p class="income-list-data">{{expenseItem.name}}</p>
-      </h3>
-      <h3 class="income-list-header col-md-2">Amount
-        <p class="income-list-data">{{expenseItem.amount}}</p>
-      </h3>
-      <h3 class="income-list-header col-md-2">Date
-        <p class="income-list-data">{{expenseItem.date | date: "yyyy-MM-dd"}}</p>
-      </h3>
-      <h3 class="income-list-header col-md-3">Notes
-        <p class="income-list-data">{{expenseItem.notes}}</p>
-      </h3>
-      <div class="button-section col-md-2"><a ng-click="second.edit()" class="btn btn-primary edit-btn"><i class="fa fa-pencil-square-o"></i></a><a ng-click="second.destroy()" class="btn btn-primary delete-btn"><i class="fa fa-ban"></i></a></div>
+      <div ng-repeat="expenseItem in expenseList | orderBy:'date'" class="individual-income-item col-md-12 no-left-padding-column">
+        <hr class="income-list-hr"/>
+        <h3 class="income-list-header col-md-3">Project
+          <p class="income-list-data">{{expenseItem.name}}</p>
+        </h3>
+        <h3 class="income-list-header col-md-2">Amount
+          <p class="income-list-data">{{expenseItem.amount}}</p>
+        </h3>
+        <h3 class="income-list-header col-md-2">Date
+          <p class="income-list-data">{{expenseItem.date | date: "yyyy-MM-dd"}}</p>
+        </h3>
+        <h3 class="income-list-header col-md-3">Notes
+          <p class="income-list-data">{{expenseItem.notes}}</p>
+        </h3>
+        <div class="button-section col-md-2"><a ng-click="second.edit()" class="btn btn-primary edit-btn"><i class="fa fa-pencil-square-o"></i></a><a ng-click="second.destroy()" class="btn btn-primary delete-btn"><i class="fa fa-ban"></i></a></div>
+      </div>
     </div>
   </div>
 </div>

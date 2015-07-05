@@ -16,7 +16,9 @@
     <div class="navbar">
       <div class="container">
         <div class="header-nav-left">
-          <h1 class="header-logo"><i class="fa fa-university"></i> Bankroll</h1>
+          <div class="header-logo">
+            <h1 class="header-logo-text"><i class="fa fa-university"></i> Bankroll</h1>
+          </div>
           <div class="header-links">
             <ul class="list-inline">
               <li ng-show="auth"><a href="/#/overview">Overview</a></li>
@@ -25,10 +27,12 @@
           </div>
         </div>
         <div class="header-nav-right">
-          <ul class="list-inline">
-            <li ng-show="auth"><a href="/#/logout">Logout</a></li>
-            <li ng-hide="auth"><a href="/#/login">Login</a></li>
-          </ul>
+          <div class="log-buttons">
+            <ul class="list-inline">
+              <li ng-show="auth"><a href="/#/logout">Logout</a></li>
+              <li ng-hide="auth"><a href="/#/login">Login</a></li>
+            </ul>
+          </div>
         </div>
       </div>
     </div>
@@ -44,6 +48,7 @@
     <script src="assets/overview/finance.factory.js"></script>
     <script src="assets/overview/overview.config.js"></script>
     <script src="assets/static/static.config.js"></script>
+    <script src="assets/static/buttons.controller.js"></script>
     <script src="assets/auth/auth.config.js"></script>
     <script src="assets/auth/login.controller.js"></script>
     <script src="assets/auth/logout.controller.js"></script>

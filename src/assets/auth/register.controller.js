@@ -25,6 +25,7 @@ angular
       var ref = new Firebase('https://bankroll.firebaseio.com/profiles/');
 
       ref.createUser({
+        name: vm.name,
         email: vm.email, 
         password: vm.password
       }, function (err, authData) {

@@ -14,22 +14,28 @@ html(lang="en-US" ng-app="bankRoll")
     link(href='http://fonts.googleapis.com/css?family=Hind:600' rel='stylesheet' type='text/css')
     link(href='http://fonts.googleapis.com/css?family=Lato:300' rel='stylesheet' type='text/css')
   body
-    .navbar
-      .container
-        .header-nav-left
-          .header-logo
-            h1.header-logo-text <i class="fa fa-university"></i> Bankroll
-          .header-links
-            ul(class="list-inline")
-              li(ng-show="auth"): a(href="/#/overview") Overview
-              li(ng-show="auth"): a(href="/#/profile") Account
-        .header-nav-right
-          .log-buttons
-            ul(class="list-inline")
-              li(ng-show="auth"): a(href="/#/logout") Logout
-              li(ng-hide="auth"): a(href="/#/login") Login
-    .content
-      .app(ng-view)
+    .wrap
+      .navbar
+        .container
+          .header-nav-left
+            .header-logo
+              h1.header-logo-text <i class="fa fa-university"></i> Bankroll
+            .header-links
+              ul(class="list-inline")
+                li(ng-show="auth"): a(href="/#/overview") Overview
+                li(ng-show="auth"): a(href="/#/profile") Account
+          .header-nav-right
+            .log-buttons
+              ul(class="list-inline")
+                li(ng-show="auth"): a(href="/#/logout") Logout
+                li(ng-hide="auth"): a(href="/#/login") Login
+      .content
+        .app(ng-view)
+
+      .footer
+        .container
+          p ©2015 Bankroll  |  Created by Kyle Turco  |  View this project on
+            a(href="https://github.com/kyleturco/bankroll-app" class="footer-link")  Github
 
     script(src="lib/build.js")
 

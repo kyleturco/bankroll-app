@@ -44,11 +44,11 @@
         h2.sidebar-header Totals
         hr.sidebar-hr
         .income-total
-          h3 Income
-            p {{totalIncome | currency}}
+          h3(class="sidebar-total-header") <i class="fa fa-caret-square-o-up"></i> Income
+            p(class="sidebar-total") {{totalIncome | currency}}
         .expense-total
-          h3 Expenses
-            p {{totalExpense | currency}}
+          h3(class="sidebar-total-header") <i class="fa fa-caret-square-o-down"></i> Expenses
+            p(class="sidebar-total") {{totalExpense | currency}}
 
   .container
     .income-list

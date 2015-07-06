@@ -13,31 +13,38 @@
     <link href="http://fonts.googleapis.com/css?family=Lato:300" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div class="navbar">
-      <div class="container">
-        <div class="header-nav-left">
-          <div class="header-logo">
-            <h1 class="header-logo-text"><i class="fa fa-university"></i> Bankroll</h1>
+    <div class="wrap">
+      <div class="navbar">
+        <div class="container">
+          <div class="header-nav-left">
+            <div class="header-logo">
+              <h1 class="header-logo-text"><i class="fa fa-university"></i> Bankroll</h1>
+            </div>
+            <div class="header-links">
+              <ul class="list-inline">
+                <li ng-show="auth"><a href="/#/overview">Overview</a></li>
+                <li ng-show="auth"><a href="/#/profile">Account</a></li>
+              </ul>
+            </div>
           </div>
-          <div class="header-links">
-            <ul class="list-inline">
-              <li ng-show="auth"><a href="/#/overview">Overview</a></li>
-              <li ng-show="auth"><a href="/#/profile">Account</a></li>
-            </ul>
-          </div>
-        </div>
-        <div class="header-nav-right">
-          <div class="log-buttons">
-            <ul class="list-inline">
-              <li ng-show="auth"><a href="/#/logout">Logout</a></li>
-              <li ng-hide="auth"><a href="/#/login">Login</a></li>
-            </ul>
+          <div class="header-nav-right">
+            <div class="log-buttons">
+              <ul class="list-inline">
+                <li ng-show="auth"><a href="/#/logout">Logout</a></li>
+                <li ng-hide="auth"><a href="/#/login">Login</a></li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
-    </div>
-    <div class="content">
-      <div ng-view class="app"></div>
+      <div class="content">
+        <div ng-view class="app"></div>
+      </div>
+      <div class="footer">
+        <div class="container">
+          <p>©2015 Bankroll  |  Created by Kyle Turco  |  View this project on<a href="https://github.com/kyleturco/bankroll-app" class="footer-link"> Github</a></p>
+        </div>
+      </div>
     </div>
     <script src="lib/build.js"></script>
     <script src="assets/main.module.js"></script>

@@ -4,40 +4,39 @@
     h2 Financial Summary
     .col-md-8.left-side.no-left-padding-column
       .add-new-main
-        .col-md-4.add-new-project
-          h3 Add Income
-          form(name="newIncomeForm" ng-submit="main.saveIncome()")
-            .form-group
-              label.control-label Name
-              input.form-control(type="text" ng-model="main.income.name")
-            .form-group
-              label.control-label Amount
-              input.form-control(type="text" ng-model="main.income.amount" placeholder="$")
-            .form-group
-              label.control-label Date
-              input.form-control(type="date" ng-model="main.income.date")
-            .form-group
-              label.control-label Notes
-              input.form-control(type="text" ng-model="main.income.notes")
-            .add-new-btn-section
-              button(class="btn btn-primary" type="submit") Add
-        .col-md-4.add-new-expense
-          h3 Add Expense
-          form(name="newExpenseForm" ng-submit="main.saveExpense()")
-            .form-group
-              label.control-label Name
-              input.form-control(type="text" ng-model="main.expense.name")
-            .form-group
-              label.control-label Amount
-              input.form-control(type="text" ng-model="main.expense.amount" placeholder="$")
-            .form-group
-              label.control-label Date
-              input.form-control(type="date" ng-model="main.expense.date")
-            .form-group
-              label.control-label Notes
-              input.form-control(type="text" ng-model="main.expense.notes")
-            .add-new-btn-section
-              button(class="btn btn-primary" type="submit") Add
+        tabset
+          tab(heading="Add Income")
+            form(class="newIncomeForm" ng-submit="main.saveIncome()")
+              .form-group
+                label.control-label Name
+                input.form-control(type="text" ng-model="main.income.name")
+              .form-group
+                label.control-label Amount
+                input.form-control(type="text" ng-model="main.income.amount" placeholder="$")
+              .form-group
+                label.control-label Date
+                input.form-control(type="date" ng-model="main.income.date")
+              .form-group
+                label.control-label Notes
+                input.form-control(type="text" ng-model="main.income.notes")
+              .add-new-btn-section
+                button(class="btn btn-primary" type="submit") Add
+          tab(heading="Add Expense")
+            form(class="newExpenseForm" ng-submit="main.saveExpense()")
+              .form-group
+                label.control-label Name
+                input.form-control(type="text" ng-model="main.expense.name")
+              .form-group
+                label.control-label Amount
+                input.form-control(type="text" ng-model="main.expense.amount" placeholder="$")
+              .form-group
+                label.control-label Date
+                input.form-control(type="date" ng-model="main.expense.date")
+              .form-group
+                label.control-label Notes
+                input.form-control(type="text" ng-model="main.expense.notes")
+              .add-new-btn-section
+                button(class="btn btn-primary" type="submit") Add
 
     .col-md-4.right-side
       .totals.sidebar-green
@@ -55,35 +54,38 @@
     .income-list
       .header-bar.col-md-12.no-left-padding-column
         h3.list-header Income
+      .category-header.col-md-12.no-left-padding-column
+        h3.income-list-header.col-md-3 Project
+        h3.income-list-header.col-md-2 Amount
+        h3.income-list-header.col-md-2 Date
+        h3.income-list-header.col-md-3 Notes
       .individual-income-item.col-md-12.no-left-padding-column(ng-repeat="incomeItem in incomeList | orderBy:'date'")
         hr.income-list-hr
-        h3.income-list-header.col-md-3 Project
-          p.income-list-data {{incomeItem.name}}
-        h3.income-list-header.col-md-2 Amount
-          p.income-list-data {{incomeItem.amount | currency}}
-        h3.income-list-header.col-md-2 Date
-          p.income-list-data {{incomeItem.date | date:'fullDate'}}
-        h3.income-list-header.col-md-3 Notes
-          p.income-list-data {{incomeItem.notes}}
+        p.income-list-data.col-md-3 {{incomeItem.name}}
+        p.income-list-data.col-md-2 {{incomeItem.amount | currency}}
+        p.income-list-data.col-md-2 {{incomeItem.date | date:'fullDate'}}
+        p.income-list-data.col-md-3 {{incomeItem.notes}}
         .button-section.col-md-2
           a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
           a.btn.btn-primary.delete-btn(ng-click="main.deleteIncome(incomeItem)") <i class="fa fa-ban"></i>
+
       //- p(ng-show="!incomeList.length") No items found
 
     .expense-list
       .header-bar.col-md-12.no-left-padding-column
         h3.list-header Expenses
+      .category-header.col-md-12.no-left-padding-column
+        h3.income-list-header.col-md-3 Project
+        h3.income-list-header.col-md-2 Amount
+        h3.income-list-header.col-md-2 Date
+        h3.income-list-header.col-md-3 Notes
       .individual-income-item.col-md-12.no-left-padding-column(ng-repeat="expenseItem in expenseList | orderBy:'date'")
         //- div(ng-if="expenseItem.length === 0") No items found
         hr.income-list-hr
-        h3.income-list-header.col-md-3 Project
-          p.income-list-data {{expenseItem.name}}
-        h3.income-list-header.col-md-2 Amount
-          p.income-list-data {{expenseItem.amount | currency}}
-        h3.income-list-header.col-md-2 Date
-          p.income-list-data {{expenseItem.date | date:'fullDate'}}
-        h3.income-list-header.col-md-3 Notes
-          p.income-list-data {{expenseItem.notes}}
+        p.income-list-data.col-md-3 {{expenseItem.name}}
+        p.income-list-data.col-md-2 {{expenseItem.amount | currency}}
+        p.income-list-data.col-md-2 {{expenseItem.date | date:'fullDate'}}
+        p.income-list-data.col-md-3 {{expenseItem.notes}}
         .button-section.col-md-2
           a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
           a.btn.btn-primary.delete-btn(ng-click="main.deleteExpense(expenseItem)") <i class="fa fa-ban"></i>

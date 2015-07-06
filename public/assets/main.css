@@ -78,7 +78,8 @@ p {
 
 .sidebar-green {
   padding-top: 4px;
-  background: #1cbe68; }
+  background: #1cbe68;
+  margin-top: 42px; }
 
 .sidebar-header {
   margin: 2px 0 6px 0; }
@@ -172,6 +173,10 @@ p.hero-text {
   padding: 0 28px 0 28px; }
 
 /** Overview Page Styles **/
+.ng-isolate-scope {
+  font-family: 'Hind';
+  font-size: 16px; }
+
 .income-list-header {
   font-size: 16px; }
 
@@ -181,26 +186,43 @@ p.hero-text {
 .income-list-hr {
   margin: 0px; }
 
-.income-list-header.col-md-3 {
-  padding-left: 0px; }
+.income-list-data {
+  margin: 3px 0 4px; }
+
+.nav-tabs > li > a {
+  border-radius: 0px;
+  padding-left: 20px;
+  padding-right: 20px; }
+
+.nav-tabs > li.active > a, .nav-tabs > li.active > a:hover {
+  color: #1f1f1f; }
+
+.newIncomeForm, .newExpenseForm {
+  border-left: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  padding: 25px;
+  margin-bottom: 15px; }
 
 .edit-btn {
   background: #ffa500;
   color: #ffffff;
-  margin: 25px 8px 0 0; }
+  margin: 2px 20px 0 0;
+  padding: 4px 10px; }
   .edit-btn:hover {
     background: #EF9B00; }
 
 .delete-btn {
   background: #ff4c4c;
   color: #ffffff;
-  margin: 25px 8px 0 0; }
+  margin: 2px 0 0 0;
+  padding: 4px 10px; }
   .delete-btn:hover {
     background: #D83C3C; }
 
 .header-bar {
   background: #f0f0f0;
-  border-top: 2px solid #1cbe68;
+  border-top: 3px solid #1cbe68;
   padding: 9px 0 7px 0;
   margin-top: 15px;
   margin-bottom: -1px; }

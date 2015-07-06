@@ -1,2 +1,2 @@
 angular
-  .module('bankRoll', ['ngRoute', 'firebase']);
+  .module('bankRoll', ['ngRoute', 'firebase', 'ui.bootstrap']);

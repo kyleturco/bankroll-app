@@ -2,7 +2,6 @@
 .container.no-left-padding-column
   .col-md-12
     h2 Financial Summary
-    //- p Welcome {{currentUserRef.email}}!
     .col-md-8.left-side.no-left-padding-column
       .add-new-main
         .col-md-4.add-new-project
@@ -47,7 +46,7 @@
         hr.sidebar-hr
         .income-total
           h3 Income
-            p {{incomelist.amount}}
+            p {{totalIncome | currency}}
         .expense-total
           h3 Expenses
             p
@@ -63,12 +62,12 @@
         h3.income-list-header.col-md-2 Amount
           p.income-list-data {{incomeItem.amount | currency}}
         h3.income-list-header.col-md-2 Date
-          p.income-list-data {{incomeItem.date | date: "MM/dd/yyyy"}}
+          p.income-list-data {{incomeItem.date | date:'fullDate'}}
         h3.income-list-header.col-md-3 Notes
           p.income-list-data {{incomeItem.notes}}
         .button-section.col-md-2
           a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
-          a.btn.btn-primary.delete-btn(ng-click="main.deleteIncome()") <i class="fa fa-ban"></i>
+          a.btn.btn-primary.delete-btn(ng-click="main.deleteIncome(incomeItem)") <i class="fa fa-ban"></i>
       //- p(ng-show="!incomeList.length") No items found
 
     .expense-list

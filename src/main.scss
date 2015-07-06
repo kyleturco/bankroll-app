@@ -146,12 +146,13 @@ p {
 }
 
 .login-background {
-  background: url("http://i58.tinypic.com/riu83a.jpg") no-repeat;
+  background: url("http://i62.tinypic.com/vhf954.jpg") no-repeat;
   background-size: cover;
   margin-top: -20px;
+  padding: 0px 0 150px 0;
   position: fixed;
   z-index: 10;
-  min-height: 100%;
+  // min-height: 100%;
   min-width: 100%;
   left: 0;
 }
@@ -159,7 +160,7 @@ p {
 
 /** Landing Page Styles **/
 .hero-section {
-  background: url("http://i58.tinypic.com/riu83a.jpg") no-repeat;
+  background: url("http://i61.tinypic.com/2n8s9w.jpg") no-repeat;
   background-size: cover;
   padding: 150px 0 150px 0;
   margin-top: -20px;
@@ -174,6 +175,7 @@ p {
 h1.hero-text {
   color: #ffffff;
   font-size: 42px;
+  margin-bottom: 12px;
 }
 
 p.hero-text {
@@ -257,13 +259,13 @@ p.hero-text {
 }
 /** Register Styles **/
 .register-background {
-  background: url("http://i58.tinypic.com/riu83a.jpg") no-repeat;
+  background: url("http://i62.tinypic.com/vhf954.jpg") no-repeat;
   background-size: cover;
-  // padding: 125px 0 150px 0;
+  padding: 0px 0 150px 0;
   margin-top: -20px;
   position: fixed;
   z-index: 10;
-  min-height: 100%;
+  // min-height: 100%;
   min-width: 100%;
   left: 0;
 }
@@ -285,4 +287,5 @@ p.hero-text {
   margin: 15px 0 15px 0;
   font-size: 18px;
 }
+
 

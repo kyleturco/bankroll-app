@@ -49,7 +49,7 @@
             p {{totalIncome | currency}}
         .expense-total
           h3 Expenses
-            p
+            p {{totalExpense | currency}}
 
   .container
     .income-list
@@ -81,10 +81,10 @@
         h3.income-list-header.col-md-2 Amount
           p.income-list-data {{expenseItem.amount | currency}}
         h3.income-list-header.col-md-2 Date
-          p.income-list-data {{expenseItem.date | date: "MM/dd/yyyy"}}
+          p.income-list-data {{expenseItem.date | date:'fullDate'}}
         h3.income-list-header.col-md-3 Notes
           p.income-list-data {{expenseItem.notes}}
         .button-section.col-md-2
-          a.btn.btn-primary.edit-btn(ng-click="second.edit()") <i class="fa fa-pencil-square-o"></i>
-          a.btn.btn-primary.delete-btn(ng-click="second.destroy()") <i class="fa fa-ban"></i>
+          a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
+          a.btn.btn-primary.delete-btn(ng-click="main.deleteExpense(expenseItem)") <i class="fa fa-ban"></i>
 

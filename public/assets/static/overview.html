@@ -67,7 +67,7 @@
         </div>
         <div class="expense-total">
           <h3>Expenses
-            <p></p>
+            <p>{{totalExpense | currency}}</p>
           </h3>
         </div>
       </div>
@@ -108,12 +108,12 @@
           <p class="income-list-data">{{expenseItem.amount | currency}}</p>
         </h3>
         <h3 class="income-list-header col-md-2">Date
-          <p class="income-list-data">{{expenseItem.date | date: "MM/dd/yyyy"}}</p>
+          <p class="income-list-data">{{expenseItem.date | date:'fullDate'}}</p>
         </h3>
         <h3 class="income-list-header col-md-3">Notes
           <p class="income-list-data">{{expenseItem.notes}}</p>
         </h3>
-        <div class="button-section col-md-2"><a ng-click="second.edit()" class="btn btn-primary edit-btn"><i class="fa fa-pencil-square-o"></i></a><a ng-click="second.destroy()" class="btn btn-primary delete-btn"><i class="fa fa-ban"></i></a></div>
+        <div class="button-section col-md-2"><a ng-click="main.edit()" class="btn btn-primary edit-btn"><i class="fa fa-pencil-square-o"></i></a><a ng-click="main.deleteExpense(expenseItem)" class="btn btn-primary delete-btn"><i class="fa fa-ban"></i></a></div>
       </div>
     </div>
   </div>

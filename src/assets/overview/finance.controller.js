@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .controller('FinanceController', function ($scope, financeFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
+  .controller('FinanceController', function ($scope, financeFactory, $firebaseArray, API_URL, $rootScope, currentUser) {
 
     var vm = this;
     var fb = new Firebase(API_URL);
@@ -17,10 +17,27 @@ angular
 
     var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles');
     var currentUserIncome = profileRef.child($rootScope.auth.uid).child('income');
-    $scope.incomeList = $firebaseObject(currentUserIncome);
+    $scope.incomeList = $firebaseArray(currentUserIncome);
+
+
+// Attempt 1 - getting totals
+    // currentUserIncome.child("amount").on("value", function(){
+    //   var total = 0;
+    //   for(var i = 0; i < $scope.incomeList.length; i++){
+    //     var amount = $scope.incomeList[i];
+    //     total += (total + (incomeList.amount))
+    //   }
+    //   return total;
+    //   console.log(total);
+    // });
+
+// Attempt 2 - getting totals using AngularFire
+    // var incomeData = $firebaseArray(currentUserIncome);
+    // var amount = incomeData.$getRecord("amount");
+    // console.log(amount);
 
     var currentUserExpense = profileRef.child($rootScope.auth.uid).child('expense');
-    $scope.expenseList = $firebaseObject(currentUserExpense);
+    $scope.expenseList = $firebaseArray(currentUserExpense);
 
     vm.saveIncome = function () {
       var randNum = (Math.floor(Math.random() * 1000000000000000));

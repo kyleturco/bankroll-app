@@ -2,6 +2,7 @@
 .container.no-left-padding-column
   .col-md-12
     h2 Financial Summary
+    //- p Welcome {{currentUserRef.email}}!
     .col-md-8.left-side.no-left-padding-column
       .add-new-main
         .col-md-4.add-new-project
@@ -19,7 +20,8 @@
             .form-group
               label.control-label Notes
               input.form-control(type="text" ng-model="main.income.notes")
-            button(class="btn btn-primary" type="submit") Add
+            .add-new-btn-section
+              button(class="btn btn-primary" type="submit") Add
         .col-md-4.add-new-expense
           h3 Add Expense
           form(name="newExpenseForm" ng-submit="main.saveExpense()")
@@ -35,7 +37,8 @@
             .form-group
               label.control-label Notes
               input.form-control(type="text" ng-model="main.expense.notes")
-            button(class="btn btn-primary" type="submit") Add
+            .add-new-btn-section
+              button(class="btn btn-primary" type="submit") Add
 
     .col-md-4.right-side
       .totals.sidebar-green
@@ -44,7 +47,7 @@
         hr.sidebar-hr
         .income-total
           h3 Income
-            p
+            p {{incomelist.amount}}
         .expense-total
           h3 Expenses
             p

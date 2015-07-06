@@ -40,7 +40,7 @@ body {
 
 /** Header Styles **/
 .navbar {
-  background-color: #f0f0f0;
+  background-color: #ffffff;
   border-bottom: 1px solid #dedede;
   width: 100%;
   max-height: 80px; }
@@ -93,31 +93,6 @@ body {
   color: #ffffff;
   font-family: 'Hind', sans-serif; }
 
-/** Sidebar Styles **/
-.sidebar-box {
-  border-left: 1px solid #dedede;
-  border-right: 1px solid #dedede;
-  border-bottom: 1px solid #dedede;
-  padding: 10px 20px 10px 20px;
-  margin-bottom: 15px; }
-
-.sidebar-green {
-  padding-top: 4px;
-  background: #1cbe68;
-  margin-top: 47px; }
-
-.sidebar-header {
-  margin: 2px 0 6px 0; }
-
-.sidebar-hr {
-  margin: 0px; }
-
-.sidebar-total {
-  margin-left: 22px; }
-
-.sidebar-total-header {
-  font-size: 19px; }
-
 /** Global Styles **/
 p {
   color: #606060; }
@@ -135,16 +110,17 @@ p {
 
 /** Login Form Styles **/
 .login-form {
+  background-color: rgba(255, 255, 255, 0.9);
   max-width: 450px;
   padding: 25px;
   margin: 0 auto;
   margin-top: 65px;
-  border: 1px solid #dedede;
-  border-radius: 5px;
-  background: #ffffff; }
+  border-radius: 0px; }
   .login-form h2 {
     text-align: center;
     margin-top: 5px; }
+  .login-form hr {
+    border-top: 1px solid #cfcfcf; }
 
 .login-section {
   margin-top: 25px; }
@@ -207,6 +183,14 @@ p.hero-text {
   padding: 0 28px 0 28px; }
 
 /** Overview Page Styles **/
+.top-half-bkg {
+  background: #f0f0f0;
+  border-bottom: 1px solid #dedede;
+  margin-top: -20px; }
+
+.income-list {
+  margin-top: 25px; }
+
 .income-list-header {
   font-size: 16px; }
 
@@ -230,11 +214,12 @@ p.hero-text {
   color: #1f1f1f; }
 
 .newIncomeForm, .newExpenseForm {
+  background: #ffffff;
   border-left: 1px solid #dedede;
   border-bottom: 1px solid #dedede;
   border-right: 1px solid #dedede;
   padding: 25px;
-  margin-bottom: 15px; }
+  margin-bottom: 40px; }
 
 .edit-btn {
   background: #ffa500;
@@ -264,6 +249,32 @@ p.hero-text {
   color: #1f1f1f;
   margin: 0px 0px 0px 15px; }
 
+/** Sidebar Styles **/
+.sidebar-box {
+  border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
+  padding: 10px 20px 10px 20px;
+  margin-bottom: 15px;
+  background: #ffffff; }
+
+.sidebar-green {
+  padding-top: 4px;
+  background: #1cbe68;
+  margin-top: 47px; }
+
+.sidebar-header {
+  margin: 2px 0 6px 0; }
+
+.sidebar-hr {
+  margin: 0px; }
+
+.sidebar-total {
+  margin-left: 22px; }
+
+.sidebar-total-header {
+  font-size: 19px; }
+
 /** Register Styles **/
 .register-background {
   background: url("http://i62.tinypic.com/vhf954.jpg") no-repeat;
@@ -276,16 +287,17 @@ p.hero-text {
   left: 0; }
 
 .register-section {
-  background: #ffffff;
+  background-color: rgba(255, 255, 255, 0.9);
   max-width: 450px;
   padding: 25px;
   margin: 0 auto;
   margin-top: 65px;
-  border: 1px solid #dedede;
-  border-radius: 5px; }
+  border-radius: 0px; }
   .register-section h2 {
     text-align: center;
     margin-top: 5px; }
+  .register-section hr {
+    border-top: 1px solid #cfcfcf; }
 
 .register-button {
   width: 100%;

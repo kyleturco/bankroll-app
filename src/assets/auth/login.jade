@@ -1,16 +1,16 @@
-angular
-.container
-  .login-form
-    h2 Login to Bankroll
-    form(name="loginForm")
-      .form-group
-        label.control-label Email
-        input.form-control(type="email", ng-model="auth.email")
-      .form-group
-        label.control-label Password
-        input.form-control(type="password", ng-model="auth.password")
-        .login-section
-          button.btn.btn-primary.login-button(ng-click="auth.login(auth.email, auth.password)") Login
-        .register-link
-          p Don't have an account?
-            a.register-link(href="/#/register")  Register now
+.login-background
+  .container
+    .login-form
+      h2 Login to Bankroll
+      form(name="loginForm")
+        .form-group
+          label.control-label Email
+          input.form-control(type="email", ng-model="auth.email")
+        .form-group
+          label.control-label Password
+          input.form-control(type="password", ng-model="auth.password")
+          .login-section
+            button.btn.btn-primary.login-button(ng-click="auth.login(auth.email, auth.password)") Login
+          .register-link
+            p Don't have an account?
+              a.register-link(href="/#/register")  Register now

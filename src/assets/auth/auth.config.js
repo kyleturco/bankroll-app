@@ -34,7 +34,7 @@ angular
         })
 
       .when('/logout', {
-        template: '<h1>Logging out...</h1>',
+        template: '<h4>Logging Out</h4>',
         controller: 'LogoutCtrl'
       })
     });

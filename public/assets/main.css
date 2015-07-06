@@ -70,9 +70,21 @@ p {
 
 /** Sidebar Styles **/
 .sidebar-box {
-  border: 1px solid #dedede;
+  border-left: 1px solid #dedede;
+  border-right: 1px solid #dedede;
+  border-bottom: 1px solid #dedede;
   padding: 10px 20px 10px 20px;
   margin-bottom: 15px; }
+
+.sidebar-green {
+  padding-top: 4px;
+  background: #1cbe68; }
+
+.sidebar-header {
+  margin: 2px 0 6px 0; }
+
+.sidebar-hr {
+  margin: 0px; }
 
 /** Global Styles **/
 p {
@@ -169,8 +181,27 @@ p.hero-text {
   .delete-btn:hover {
     background: #D83C3C; }
 
+.header-bar {
+  background: #f0f0f0;
+  border-top: 2px solid #1cbe68;
+  padding: 9px 0 7px 0;
+  margin-top: 15px;
+  margin-bottom: -1px; }
+
+.list-header {
+  margin-left: 18px;
+  color: #1f1f1f;
+  margin: 0px 0px 0px 10px; }
+
 /** Register Styles **/
+.register-background {
+  background: url("http://i58.tinypic.com/riu83a.jpg") no-repeat;
+  background-size: cover;
+  padding: 125px 0 150px 0;
+  margin-top: -20px; }
+
 .register-section {
+  background: #ffffff;
   max-width: 450px;
   padding: 25px;
   margin: 0 auto;

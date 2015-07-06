@@ -1,17 +1,18 @@
-.container
-  .register-section
-    h1 Register for Bankroll
-    form(name="registerForm")
-      .form-group
-        label.control-label Name
-        input.form-control(type="text", ng-model="auth.name")
-      .form-group
-        label.control-label Email
-        input.form-control(type="email", ng-model="auth.email")
-      .form-group
-        label.control-label Password
-        input.form-control(type="password", ng-model="auth.password")
-      button.btn.btn-primary.register-button(ng-click="auth.register(auth.email, auth.password)") Register
-      .login-link
-        p Already a user?
-          a.register-link(href="/#/login")  Login here
+.register-background
+  .container
+    .register-section
+      h1 Register for Bankroll
+      form(name="registerForm")
+        .form-group
+          label.control-label Name
+          input.form-control(type="text", ng-model="auth.name")
+        .form-group
+          label.control-label Email
+          input.form-control(type="email", ng-model="auth.email")
+        .form-group
+          label.control-label Password
+          input.form-control(type="password", ng-model="auth.password")
+        button.btn.btn-primary.register-button(ng-click="auth.register(auth.email, auth.password)") Register
+        .login-link
+          p Already a user?
+            a.register-link(href="/#/login")  Login here

@@ -1,7 +1,7 @@
 angular
   .module('bankRoll')
 
-  .controller('RegisterCtrl', function ($scope, $location, API_URL, $http, currentUser) {
+  .controller('RegisterCtrl', function ($scope, $location, API_URL, $http, currentUser, $rootScope) {
     var vm = this;
 
     vm.login = function (email, password) {
@@ -23,6 +23,7 @@ angular
 
     vm.register = function (email, password) {
       var ref = new Firebase('https://bankroll.firebaseio.com/profiles/');
+      var vm = this;
 
       ref.createUser({
         name: vm.name,
@@ -39,7 +40,18 @@ angular
           // currentUser === {}
           var profile = {};
           ref.child(authData.uid).set(profile)
+
+          vm.createIncome = function () {
+          debugger;
+          ref.child(authData.uid).set('/income')
+          }
+
+          vm.createExpense = function () {
+          ref.child(authData.uid).set('/expense')
+          }
         }
       })
+
     };
+
   });

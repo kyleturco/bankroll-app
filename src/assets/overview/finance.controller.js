@@ -2,10 +2,18 @@ angular
   .module('bankRoll')
 
   .controller('FinanceController', function ($scope, financeFactory, $firebaseObject, API_URL, $rootScope, currentUser) {
+
     var vm = this;
     var fb = new Firebase(API_URL);
     // var authData = fb.getAuth();
 
+    // vm.createIncome = function () {
+    //   profileRef.child($rootScope.auth.uid + '/income')
+    // }
+
+    // vm.createExpense = function () {
+    //   profileRef.child($rootScope.auth.uid + '/income')
+    // }
 
     var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles');
     var currentUserIncome = profileRef.child($rootScope.auth.uid).child('income');
@@ -49,4 +57,24 @@ angular
       var currentUserIncome = profileRef.child($rootScope.auth.uid).child('income');
       currentUserIncome.remove();
     }
+
+    // $scope.getIncomeTotal = function() {
+    //   var total = 0;
+    //   for(var i = 0; i < $scope.incomeList.length; i++){
+    //     var
+    //   }
+    // }
+
+  // .filter('sumOfIncome', function() {
+  //   return function (data, key) {
+  //     if (typeof (data) === 'undefined' && typeof (key) === 'undefined') {
+  //       return 0;
+  //     }
+  //     var sum = 0;
+  //     for (var i = 0; i < data.length; i++) {
+  //       sum = sum + data[i][key];
+  //     }
+  //     return sum;
+  //   }
+  // })
 });

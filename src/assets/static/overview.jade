@@ -1,7 +1,8 @@
 .overview-content
-  .container.no-left-padding-column
-    .col-md-8.left-side
-      h2 Financial Summary
+.container.no-left-padding-column
+  .col-md-12
+    h2 Financial Summary
+    .col-md-8.left-side.no-left-padding-column
       .add-new-main
         .col-md-4.add-new-project
           h3 Add Income
@@ -11,7 +12,7 @@
               input.form-control(type="text" ng-model="main.income.name")
             .form-group
               label.control-label Amount
-              input.form-control(type="text" ng-model="main.income.amount")
+              input.form-control(type="text" ng-model="main.income.amount" placeholder="$")
             .form-group
               label.control-label Date
               input.form-control(type="date" ng-model="main.income.date")
@@ -27,7 +28,7 @@
               input.form-control(type="text" ng-model="main.expense.name")
             .form-group
               label.control-label Amount
-              input.form-control(type="text" ng-model="main.expense.amount")
+              input.form-control(type="text" ng-model="main.expense.amount" placeholder="$")
             .form-group
               label.control-label Date
               input.form-control(type="date" ng-model="main.expense.date")
@@ -37,41 +38,48 @@
             button(class="btn btn-primary" type="submit") Add
 
     .col-md-4.right-side
+      .totals.sidebar-green
       .totals.sidebar-box
-        h2 Totals
-        hr
-        h3 Income
-          p {{income.total}}
-        h3 Expenses
-          p {{expense.total}}
+        h2.sidebar-header Totals
+        hr.sidebar-hr
+        .income-total
+          h3 Income
+            p
+        .expense-total
+          h3 Expenses
+            p
 
   .container
     .income-list
-      h3 Income List
+      .header-bar.col-md-12.no-left-padding-column
+        h3.list-header Income
       .individual-income-item.col-md-12.no-left-padding-column(ng-repeat="incomeItem in incomeList | orderBy:'date'")
         hr.income-list-hr
         h3.income-list-header.col-md-3 Project
           p.income-list-data {{incomeItem.name}}
         h3.income-list-header.col-md-2 Amount
-          p.income-list-data {{incomeItem.amount}}
+          p.income-list-data {{incomeItem.amount | currency}}
         h3.income-list-header.col-md-2 Date
-          p.income-list-data {{incomeItem.date | date: "yyyy-MM-dd"}}
+          p.income-list-data {{incomeItem.date | date: "MM/dd/yyyy"}}
         h3.income-list-header.col-md-3 Notes
           p.income-list-data {{incomeItem.notes}}
         .button-section.col-md-2
           a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
           a.btn.btn-primary.delete-btn(ng-click="main.deleteIncome()") <i class="fa fa-ban"></i>
+      //- p(ng-show="!incomeList.length") No items found
 
     .expense-list
-      h3 Expense List
+      .header-bar.col-md-12.no-left-padding-column
+        h3.list-header Expenses
       .individual-income-item.col-md-12.no-left-padding-column(ng-repeat="expenseItem in expenseList | orderBy:'date'")
+        //- div(ng-if="expenseItem.length === 0") No items found
         hr.income-list-hr
         h3.income-list-header.col-md-3 Project
           p.income-list-data {{expenseItem.name}}
         h3.income-list-header.col-md-2 Amount
-          p.income-list-data {{expenseItem.amount}}
+          p.income-list-data {{expenseItem.amount | currency}}
         h3.income-list-header.col-md-2 Date
-          p.income-list-data {{expenseItem.date | date: "yyyy-MM-dd"}}
+          p.income-list-data {{expenseItem.date | date: "MM/dd/yyyy"}}
         h3.income-list-header.col-md-3 Notes
           p.income-list-data {{expenseItem.notes}}
         .button-section.col-md-2

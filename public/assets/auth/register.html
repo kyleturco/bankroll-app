@@ -1,1 +1,27 @@
-<div class="register-background"><div class="container"><div class="register-section"><h2>Register for Bankroll</h2><hr/><form name="registerForm"><div class="form-group"><label class="control-label">Name</label><input type="text" ng-model="auth.name" class="form-control"/></div><div class="form-group"><label class="control-label">Email</label><input type="email" ng-model="auth.email" class="form-control"/></div><div class="form-group"><label class="control-label">Password</label><input type="password" ng-model="auth.password" class="form-control"/></div><button ng-click="auth.register(auth.email, auth.password)" class="btn btn-primary register-button">Register</button><div class="login-link"><p>Already a user?<a href="/#/login" class="register-link"> Login here</a></p></div></form></div></div></div>
+
+<div class="register-background">
+  <div class="container">
+    <div class="register-section">
+      <h2>Register for Bankroll</h2>
+      <hr/>
+      <form name="registerForm">
+        <div class="form-group">
+          <label class="control-label">Name</label>
+          <input type="text" ng-model="auth.name" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Email</label>
+          <input type="email" ng-model="auth.email" class="form-control"/>
+        </div>
+        <div class="form-group">
+          <label class="control-label">Password</label>
+          <input type="password" ng-model="auth.password" class="form-control"/>
+        </div>
+        <button ng-click="auth.register(auth.email, auth.password)" class="btn btn-primary register-button">Register</button>
+        <div class="login-link">
+          <p>Already a user?<a href="/#/login" class="register-link"> Login here</a></p>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

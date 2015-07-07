@@ -1,13 +1,1 @@
-'use strict';
-
-angular.module('bankRoll').run(function ($rootScope, $location, API_URL) {
-  $rootScope.$on('$routeChangeStart', function (event, nextRoute) {
-    var fb = new Firebase(API_URL);
-    $rootScope.auth = fb.getAuth();
-
-    if (nextRoute.$$route && nextRoute.$$route['private'] && !$rootScope.auth) {
-      $location.path('/login');
-    }
-  });
-});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hc3NldHMvbWFpbi5ydW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxPQUFPLENBQ0osTUFBTSxDQUFDLFVBQVUsQ0FBQyxDQUVsQixHQUFHLENBQUMsVUFBVSxVQUFVLEVBQUUsU0FBUyxFQUFFLE9BQU8sRUFBRTtBQUM3QyxZQUFVLENBQUMsR0FBRyxDQUFDLG1CQUFtQixFQUFFLFVBQVUsS0FBSyxFQUFFLFNBQVMsRUFBRTtBQUM5RCxRQUFJLEVBQUUsR0FBRyxJQUFJLFFBQVEsQ0FBQyxPQUFPLENBQUMsQ0FBQztBQUMvQixjQUFVLENBQUMsSUFBSSxHQUFHLEVBQUUsQ0FBQyxPQUFPLEVBQUUsQ0FBQzs7QUFFL0IsUUFBSSxTQUFTLENBQUMsT0FBTyxJQUFJLFNBQVMsQ0FBQyxPQUFPLFdBQVEsSUFBSSxDQUFDLFVBQVUsQ0FBQyxJQUFJLEVBQUU7QUFDdEUsZUFBUyxDQUFDLElBQUksQ0FBQyxRQUFRLENBQUMsQ0FBQTtLQUN6QjtHQUNGLENBQUMsQ0FBQztDQUNKLENBQUMsQ0FBQyIsImZpbGUiOiJzcmMvYXNzZXRzL21haW4ucnVuLmpzIiwic291cmNlc0NvbnRlbnQiOlsiYW5ndWxhclxuICAubW9kdWxlKCdiYW5rUm9sbCcpXG5cbiAgLnJ1bihmdW5jdGlvbiAoJHJvb3RTY29wZSwgJGxvY2F0aW9uLCBBUElfVVJMKSB7XG4gICAgJHJvb3RTY29wZS4kb24oJyRyb3V0ZUNoYW5nZVN0YXJ0JywgZnVuY3Rpb24gKGV2ZW50LCBuZXh0Um91dGUpIHtcbiAgICAgIHZhciBmYiA9IG5ldyBGaXJlYmFzZShBUElfVVJMKTtcbiAgICAgICRyb290U2NvcGUuYXV0aCA9IGZiLmdldEF1dGgoKTtcblxuICAgICAgaWYgKG5leHRSb3V0ZS4kJHJvdXRlICYmIG5leHRSb3V0ZS4kJHJvdXRlLnByaXZhdGUgJiYgISRyb290U2NvcGUuYXV0aCkge1xuICAgICAgICAkbG9jYXRpb24ucGF0aCgnL2xvZ2luJylcbiAgICAgIH1cbiAgICB9KTtcbiAgfSk7XG4iXX0=
+"use strict";angular.module("bankRoll").run(function(a,b,c){a.$on("$routeChangeStart",function(d,e){var f=new Firebase(c);a.auth=f.getAuth(),e.$$route&&e.$$route["private"]&&!a.auth&&b.path("/login")})});

@@ -1,18 +1,1 @@
-'use strict';
-
-angular.module('bankRoll').config(function ($routeProvider) {
-  $routeProvider.when('/', {
-    templateUrl: 'assets/static/landing.html',
-    controller: 'ButtonController',
-    controllerAs: 'button'
-  }).when('/login', {
-    templateUrl: 'assets/auth/login.html'
-  }).when('/register', {
-    templateUrl: 'assets/auth/register.html'
-  }).when('/profile', {
-    templateUrl: 'assets/static/profile.html'
-  }).otherwise({
-    templateUrl: 'assets/static/404.html'
-  });
-});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hc3NldHMvc3RhdGljL3N0YXRpYy5jb25maWcuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxPQUFPLENBQ0osTUFBTSxDQUFDLFVBQVUsQ0FBQyxDQUNsQixNQUFNLENBQUMsVUFBVSxjQUFjLEVBQUU7QUFDaEMsZ0JBQWMsQ0FDWCxJQUFJLENBQUMsR0FBRyxFQUFFO0FBQ1QsZUFBVyxFQUFFLDRCQUE0QjtBQUN6QyxjQUFVLEVBQUUsa0JBQWtCO0FBQzlCLGdCQUFZLEVBQUUsUUFBUTtHQUN2QixDQUFDLENBQ0QsSUFBSSxDQUFDLFFBQVEsRUFBRTtBQUNkLGVBQVcsRUFBRSx3QkFBd0I7R0FDdEMsQ0FBQyxDQUNELElBQUksQ0FBQyxXQUFXLEVBQUU7QUFDakIsZUFBVyxFQUFFLDJCQUEyQjtHQUN6QyxDQUFDLENBQ0QsSUFBSSxDQUFDLFVBQVUsRUFBRTtBQUNoQixlQUFXLEVBQUUsNEJBQTRCO0dBQzFDLENBQUMsQ0FFRCxTQUFTLENBQUM7QUFDVCxlQUFXLEVBQUUsd0JBQXdCO0dBQ3RDLENBQUMsQ0FBQztDQUNOLENBQUMsQ0FBQSIsImZpbGUiOiJzcmMvYXNzZXRzL3N0YXRpYy9zdGF0aWMuY29uZmlnLmpzIiwic291cmNlc0NvbnRlbnQiOlsiYW5ndWxhclxuICAubW9kdWxlKCdiYW5rUm9sbCcpXG4gIC5jb25maWcoZnVuY3Rpb24gKCRyb3V0ZVByb3ZpZGVyKSB7XG4gICAgJHJvdXRlUHJvdmlkZXJcbiAgICAgIC53aGVuKCcvJywge1xuICAgICAgICB0ZW1wbGF0ZVVybDogJ2Fzc2V0cy9zdGF0aWMvbGFuZGluZy5odG1sJyxcbiAgICAgICAgY29udHJvbGxlcjogJ0J1dHRvbkNvbnRyb2xsZXInLFxuICAgICAgICBjb250cm9sbGVyQXM6ICdidXR0b24nXG4gICAgICB9KVxuICAgICAgLndoZW4oJy9sb2dpbicsIHtcbiAgICAgICAgdGVtcGxhdGVVcmw6ICdhc3NldHMvYXV0aC9sb2dpbi5odG1sJ1xuICAgICAgfSlcbiAgICAgIC53aGVuKCcvcmVnaXN0ZXInLCB7XG4gICAgICAgIHRlbXBsYXRlVXJsOiAnYXNzZXRzL2F1dGgvcmVnaXN0ZXIuaHRtbCdcbiAgICAgIH0pXG4gICAgICAud2hlbignL3Byb2ZpbGUnLCB7XG4gICAgICAgIHRlbXBsYXRlVXJsOiAnYXNzZXRzL3N0YXRpYy9wcm9maWxlLmh0bWwnXG4gICAgICB9KVxuXG4gICAgICAub3RoZXJ3aXNlKHtcbiAgICAgICAgdGVtcGxhdGVVcmw6ICdhc3NldHMvc3RhdGljLzQwNC5odG1sJ1xuICAgICAgfSk7XG4gIH0pXG4iXX0=
+"use strict";angular.module("bankRoll").config(function(a){a.when("/",{templateUrl:"assets/static/landing.html",controller:"ButtonController",controllerAs:"button"}).when("/login",{templateUrl:"assets/auth/login.html"}).when("/register",{templateUrl:"assets/auth/register.html"}).when("/profile",{templateUrl:"assets/static/profile.html"}).otherwise({templateUrl:"assets/static/404.html"})});

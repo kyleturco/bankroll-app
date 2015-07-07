@@ -1,4 +1,1 @@
-'use strict';
-
-angular.module('bankRoll').constant('API_URL', 'https://bankroll.firebaseio.com/');
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hc3NldHMvbWFpbi5jb25zdGFudHMuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7QUFBQSxPQUFPLENBQ0wsTUFBTSxDQUFDLFVBQVUsQ0FBQyxDQUNsQixRQUFRLENBQUMsU0FBUyxFQUFFLGtDQUFrQyxDQUFDLENBQUEiLCJmaWxlIjoic3JjL2Fzc2V0cy9tYWluLmNvbnN0YW50cy5qcyIsInNvdXJjZXNDb250ZW50IjpbImFuZ3VsYXJcblx0Lm1vZHVsZSgnYmFua1JvbGwnKVxuXHQuY29uc3RhbnQoJ0FQSV9VUkwnLCAnaHR0cHM6Ly9iYW5rcm9sbC5maXJlYmFzZWlvLmNvbS8nKVxuIl19
+"use strict";angular.module("bankRoll").constant("API_URL","https://bankroll.firebaseio.com/");

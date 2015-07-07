@@ -1,13 +1,1 @@
-'use strict';
-
-angular.module('bankRoll').filter('objToArr', function () {
-	return function (obj) {
-		if (obj) {
-			return Object.keys(obj).map(function (key) {
-				obj[key].id = key;
-				return obj[key];
-			});
-		}
-	};
-});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNyYy9hc3NldHMvbWFpbi5maWx0ZXJzLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUEsT0FBTyxDQUNMLE1BQU0sQ0FBQyxVQUFVLENBQUMsQ0FFbEIsTUFBTSxDQUFDLFVBQVUsRUFBRSxZQUFVO0FBQzdCLFFBQU8sVUFBUyxHQUFHLEVBQUM7QUFDbkIsTUFBSSxHQUFHLEVBQUU7QUFDUixVQUFPLE1BQU0sQ0FDWCxJQUFJLENBQUMsR0FBRyxDQUFDLENBQ1QsR0FBRyxDQUFDLFVBQVMsR0FBRyxFQUFDO0FBQ2pCLE9BQUcsQ0FBQyxHQUFHLENBQUMsQ0FBQyxFQUFFLEdBQUcsR0FBRyxDQUFDO0FBQ2xCLFdBQU8sR0FBRyxDQUFDLEdBQUcsQ0FBQyxDQUFDO0lBQ2hCLENBQUMsQ0FBQTtHQUNIO0VBQ0QsQ0FBQTtDQUNELENBQUMsQ0FBQSIsImZpbGUiOiJzcmMvYXNzZXRzL21haW4uZmlsdGVycy5qcyIsInNvdXJjZXNDb250ZW50IjpbImFuZ3VsYXJcblx0Lm1vZHVsZSgnYmFua1JvbGwnKVxuXG5cdC5maWx0ZXIoJ29ialRvQXJyJywgZnVuY3Rpb24oKXtcblx0XHRyZXR1cm4gZnVuY3Rpb24ob2JqKXtcblx0XHRcdGlmIChvYmopIHtcblx0XHRcdFx0cmV0dXJuIE9iamVjdFxuXHRcdFx0XHRcdC5rZXlzKG9iailcblx0XHRcdFx0XHQubWFwKGZ1bmN0aW9uKGtleSl7XG5cdFx0XHRcdFx0XHRvYmpba2V5XS5pZCA9IGtleTtcblx0XHRcdFx0XHRcdHJldHVybiBvYmpba2V5XTtcblx0XHRcdFx0XHR9KVxuXHRcdFx0fVxuXHRcdH1cblx0fSlcbiJdfQ==
+"use strict";angular.module("bankRoll").filter("objToArr",function(){return function(a){return a?Object.keys(a).map(function(b){return a[b].id=b,a[b]}):void 0}});

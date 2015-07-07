@@ -1,15 +1,15 @@
 
 <div class="top-half-bkg">
-  <div class="container no-left-padding-column">
+  <div class="container">
     <div class="col-md-12">
-      <h2>Financial Summary</h2>
+      <h2 class="overview-header">Financial Summary</h2>
       <div class="col-md-8 left-side no-left-padding-column">
         <div class="add-new-main">
           <tabset>
             <tab heading="Add Income">
               <form ng-submit="main.saveIncome()" class="newIncomeForm">
                 <div class="form-group">
-                  <label class="control-label">Name</label>
+                  <label class="control-label">Project Name</label>
                   <input type="text" ng-model="main.income.name" class="form-control"/>
                 </div>
                 <div class="form-group">
@@ -32,7 +32,7 @@
             <tab heading="Add Expense">
               <form ng-submit="main.saveExpense()" class="newExpenseForm">
                 <div class="form-group">
-                  <label class="control-label">Name</label>
+                  <label class="control-label">Expense Name</label>
                   <input type="text" ng-model="main.expense.name" class="form-control"/>
                 </div>
                 <div class="form-group">

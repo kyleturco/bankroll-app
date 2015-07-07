@@ -1,14 +1,14 @@
 .top-half-bkg
-  .container.no-left-padding-column
+  .container
     .col-md-12
-      h2 Financial Summary
+      h2.overview-header Financial Summary
       .col-md-8.left-side.no-left-padding-column
         .add-new-main
           tabset
             tab(heading="Add Income")
               form(class="newIncomeForm" ng-submit="main.saveIncome()")
                 .form-group
-                  label.control-label Name
+                  label.control-label Project Name
                   input.form-control(type="text" ng-model="main.income.name")
                 .form-group
                   label.control-label Amount
@@ -24,7 +24,7 @@
             tab(heading="Add Expense")
               form(class="newExpenseForm" ng-submit="main.saveExpense()")
                 .form-group
-                  label.control-label Name
+                  label.control-label Expense Name
                   input.form-control(type="text" ng-model="main.expense.name")
                 .form-group
                   label.control-label Amount
@@ -70,8 +70,6 @@
           a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
           a.btn.btn-primary.delete-btn(ng-click="main.deleteIncome(incomeItem)") <i class="fa fa-ban"></i>
 
-      //- p(ng-show="!incomeList.length") No items found
-
     .expense-list
       .header-bar.col-md-12.no-left-padding-column
         h3.list-header Expenses
@@ -90,4 +88,3 @@
         .button-section.col-md-2
           a.btn.btn-primary.edit-btn(ng-click="main.edit()") <i class="fa fa-pencil-square-o"></i>
           a.btn.btn-primary.delete-btn(ng-click="main.deleteExpense(expenseItem)") <i class="fa fa-ban"></i>
-

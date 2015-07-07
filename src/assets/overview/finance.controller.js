@@ -11,12 +11,16 @@ angular
     $scope.incomeList = $firebaseArray(currentUserIncome);
     $scope.totalIncome = 0;
 
-    $scope.incomeList.$loaded().then(function(res) {
+    vm.incomeTotal = function () {
+      $scope.incomeList.$loaded().then(function(res) {
       for(var i = 0; i < $scope.incomeList.length; i++) {
         $scope.totalIncome = $scope.totalIncome + parseFloat($scope.incomeList[i].amount);
       }
       console.log('total income list', $scope.incomeList);
-    });
+      });
+    }
+
+    vm.incomeTotal();
 
     var currentUserExpense = profileRef.child($rootScope.auth.uid).child('expense');
     $scope.expenseList = $firebaseArray(currentUserExpense);
@@ -37,8 +41,9 @@ angular
       vm.income.date = vm.income.date.slice(0, 15);
       profileRef.child($rootScope.auth.uid + '/income' + '/income' + (randNum)).set(vm.income, function(err) {
         console.log('done setting income, err:', err);
-        $scope.incomeID = ('income' + (randNum));
+        // $scope.incomeID = ('income' + (randNum));
         vm.income = {};
+        // vm.incomeTotal();
         $scope.$apply();
       });
     };

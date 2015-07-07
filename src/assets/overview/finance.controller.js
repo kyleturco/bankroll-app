@@ -7,11 +7,12 @@ angular
     // var authData = fb.getAuth();
 
     var profileRef = new Firebase('https://bankroll.firebaseio.com/profiles');
+
     var currentUserIncome = profileRef.child($rootScope.auth.uid).child('income');
     $scope.incomeList = $firebaseArray(currentUserIncome);
-    $scope.totalIncome = 0;
 
-    vm.incomeTotal = function () {
+    vm.loadIncome = function () {
+      $scope.totalIncome = 0;
       $scope.incomeList.$loaded().then(function(res) {
       for(var i = 0; i < $scope.incomeList.length; i++) {
         $scope.totalIncome = $scope.totalIncome + parseFloat($scope.incomeList[i].amount);
@@ -20,18 +21,22 @@ angular
       });
     }
 
-    vm.incomeTotal();
+    vm.loadIncome();
 
     var currentUserExpense = profileRef.child($rootScope.auth.uid).child('expense');
     $scope.expenseList = $firebaseArray(currentUserExpense);
-    $scope.totalExpense = 0;
 
-    $scope.expenseList.$loaded().then(function(res) {
-      for(var i = 0; i < $scope.expenseList.length; i++) {
-        $scope.totalExpense = $scope.totalExpense + parseFloat($scope.expenseList[i].amount);
-      }
-      console.log('total expense list', $scope.expenseList);
-    });
+    vm.loadExpense = function () {
+      $scope.totalExpense = 0;
+      $scope.expenseList.$loaded().then(function(res) {
+        for(var i = 0; i < $scope.expenseList.length; i++) {
+          $scope.totalExpense = $scope.totalExpense + parseFloat($scope.expenseList[i].amount);
+        }
+        console.log('total expense list', $scope.expenseList);
+      });
+    }
+
+    vm.loadExpense();
 
     vm.saveIncome = function () {
       var randNum = (Math.floor(Math.random() * 1000000000000000));
@@ -41,9 +46,8 @@ angular
       vm.income.date = vm.income.date.slice(0, 15);
       profileRef.child($rootScope.auth.uid + '/income' + '/income' + (randNum)).set(vm.income, function(err) {
         console.log('done setting income, err:', err);
-        // $scope.incomeID = ('income' + (randNum));
         vm.income = {};
-        // vm.incomeTotal();
+        vm.loadIncome();
         $scope.$apply();
       });
     };
@@ -57,6 +61,7 @@ angular
       profileRef.child($rootScope.auth.uid + '/expense' + '/expense' + (randNum)).set(vm.expense, function(err) {
         console.log('done setting expense, err:', err);
         vm.expense = {};
+        vm.loadExpense();
         $scope.$apply();
       });
     };
@@ -68,6 +73,7 @@ angular
           console.log("Error;", error);
         } else {
           console.log("Removed successfully");
+          vm.loadIncome();
         }
       });
     };
@@ -79,6 +85,7 @@ angular
           console.log("Error;", error);
         } else {
           console.log("Removed successfully");
+          vm.loadExpense();
         }
       });
 
